@@ -21,7 +21,7 @@ import com.parse.ParseFile;
 // this is new
 //This fragment is the preview page for accepting or denying the new photo. If the user accepts it will be imported into the Parse Database.
 //When they accept a new Photo object gets created on Parse with teh associated ParseFFile containing the image.
-
+//chris added a comment
 public class CameraFragment extends Fragment {
 
     private static final String TAG = "CameraFragment";
