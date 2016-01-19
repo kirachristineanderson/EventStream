@@ -1,0 +1,96 @@
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".SignUpActivity">
+
+    <!-- Login form -->
+
+    <!--<ScrollView-->
+    <!--android:id="@+id/signup_form"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:background="#673AB7">-->
+
+    <RelativeLayout
+        style="@style/Theme.AppCompat"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#9575cd"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/username_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/email_edit_text"
+            android:layout_alignEnd="@+id/password_edit_text"
+            android:layout_alignLeft="@+id/password_edit_text"
+            android:layout_alignRight="@+id/password_edit_text"
+            android:layout_alignStart="@+id/password_edit_text"
+            android:layout_centerHorizontal="true"
+            android:inputType="textEmailAddress"
+            android:singleLine="true"
+            android:textColor="#FFFFFF"
+            android:text="Username" />
+
+        <EditText
+            android:id="@+id/email_edit_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/password_again_edit_text"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="40dp"
+            android:hint="@string/prompt_email"
+            android:inputType="textEmailAddress"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FFFFFF" />
+
+        <EditText
+            android:id="@+id/password_edit_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:hint="@string/com_parse_ui_password_input_hint"
+            android:inputType="textPassword"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FFFFFF" />
+
+        <EditText
+            android:id="@+id/password_again_edit_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/password_edit_text"
+            android:layout_centerHorizontal="true"
+            android:hint="@string/com_parse_ui_password_input_hint"
+            android:imeActionId="@+id/edittext_action_signup"
+            android:imeActionLabel="@string/title_activity_sign_up"
+            android:imeOptions="actionUnspecified"
+            android:inputType="textPassword"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FFFFFF" />
+
+        <Button
+            android:id="@+id/createacc_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/password_edit_text"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="end"
+            android:layout_marginTop="67dp"
+            android:background="#FAFAFA"
+            android:paddingLeft="32dp"
+            android:paddingRight="32dp"
+            android:text="Sign Up"
+            android:textColor="#000000" />
+
+
+    </RelativeLayout>
+    <!--</ScrollView>-->
+
+</merge>

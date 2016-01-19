@@ -1,0 +1,69 @@
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".LoginActivity" >
+
+    <!-- Login form -->
+
+    <!--<ScrollView-->
+        <!--android:id="@+id/login_form"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--style="@android:style/Theme.Light"-->
+        <!--android:background="#E0E0E0">-->
+
+        <RelativeLayout
+            style="@style/Theme.AppCompat"
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="#9575cd">
+
+            <EditText
+                android:id="@+id/username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/prompt_email"
+                android:inputType="textEmailAddress"
+                android:maxLines="1"
+                android:singleLine="false"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#FFFFFF"
+                android:layout_above="@+id/password"
+                android:layout_centerHorizontal="true"
+                android:text="Username" />
+
+            <EditText
+                android:id="@+id/password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/com_parse_ui_password_input_hint"
+                android:inputType="textPassword"
+                android:maxLines="1"
+                android:singleLine="false"
+                android:imeActionId="@+id/edittext_action_login"
+                android:imeActionLabel="@string/title_activity_login"
+                android:imeOptions="actionUnspecified"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#FFFFFF"
+                android:layout_marginBottom="68dp"
+                android:layout_above="@+id/signin_button"
+                android:layout_centerHorizontal="true" />
+
+            <Button
+                android:id="@+id/signin_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:paddingLeft="32dp"
+                android:paddingRight="32dp"
+                android:text="Sign In"
+                android:layout_marginBottom="179dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:textColor="#00000F"
+                android:background="#FAFAFA" />
+
+        </RelativeLayout>
+    <!--</ScrollView>-->
+
+</merge>
