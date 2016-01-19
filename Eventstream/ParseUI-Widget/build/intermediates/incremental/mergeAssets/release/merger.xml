@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="C:\Users\Kira\Documents\CSUN year 5\COMP 490L\Version 1.0\Eventstream\ParseUI-Widget\src\main\assets"/></dataSet><dataSet config="release"><source path="C:\Users\Kira\Documents\CSUN year 5\COMP 490L\Version 1.0\Eventstream\ParseUI-Widget\src\release\assets"/></dataSet></merger>
+<merger version="3"><dataSet config="main"><source path="/Users/RekMor/Desktop/rek/EventStream/Eventstream/ParseUI-Widget/src/main/assets"/></dataSet><dataSet config="release"><source path="/Users/RekMor/Desktop/rek/EventStream/Eventstream/ParseUI-Widget/src/release/assets"/></dataSet></merger>

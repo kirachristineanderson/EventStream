@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/C:/Users/Kira/Documents/CSUN%20year%205/COMP%20490L/Version%201.0/Eventstream/ParseUI-Login/src/main/res/values-es/strings.xml -->
+    <!-- From: file:/Users/RekMor/Desktop/rek/EventStream/Eventstream/ParseUI-Login/src/main/res/values-es/strings.xml -->
     <eat-comment/>
     <plurals name="com_parse_ui_password_too_short_toast">
         <item quantity="one">La contraseña debe tener al menos %d caracteres</item>
