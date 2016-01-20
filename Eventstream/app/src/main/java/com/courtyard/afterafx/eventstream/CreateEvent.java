@@ -1,18 +1,24 @@
 package com.courtyard.afterafx.eventstream;
 
 import android.content.Intent;
+import android.location.Address;
+import android.location.Geocoder;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.content.Context;
 
+import com.google.maps.model.LatLng;
 import com.parse.ParseException;
 import com.parse.ParseGeoPoint;
 import com.parse.ParseUser;
 import com.parse.SaveCallback;
 
 import java.util.Date;
+import java.util.List;
+import java.util.Locale;
 
 
 public class CreateEvent extends AppCompatActivity {
@@ -62,7 +68,9 @@ public class CreateEvent extends AppCompatActivity {
         parseEvent.setDescription(eventDescription);
         parseEvent.setEventId(eventId);
         parseEvent.setEventCreator(ParseUser.getCurrentUser());
-        //parseEvent.setLocation(eventLocation);
+
+
+        parseEvent.setLocation(getLocationFromAddress(this, eventLocation));
         //parseEvent.setStartDate(startDate);
         //parseEvent.setEndDate(endDate);
 
@@ -73,4 +81,33 @@ public class CreateEvent extends AppCompatActivity {
             }
         });
     }
-}
+
+    public ParseGeoPoint getLocationFromAddress(Context context, String strAddress) {
+
+
+        Geocoder coder = new Geocoder(context, Locale.getDefault());
+        List<Address> address;
+        ParseGeoPoint p1 = null;
+
+        try {
+            //address = coder.getFromLocationName(strAddress, 5);
+            address = coder.getFromLocationName("10721 Fullbright Ave, Chatsworth, CA", 5);
+            if (address == null) {
+                return null;
+            }
+            Address location = address.get(0);
+            location.getLatitude();
+            location.getLongitude();
+
+            p1 = new ParseGeoPoint(location.getLatitude(), location.getLongitude());
+
+        } catch (Exception ex) {
+
+            ex.printStackTrace();
+        }
+
+        return p1;
+    }
+
+    }
+
