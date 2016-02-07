@@ -10,8 +10,8 @@ import com.parse.ParseQueryAdapter;
 
 public class CustomAdapter extends ParseQueryAdapter<JoinedEvent> {
 
-
     public CustomAdapter(Context context) {
+
         super(context, new ParseQueryAdapter.QueryFactory<JoinedEvent>() {
             public ParseQuery<JoinedEvent> create() {
                 ParseQuery query = new ParseQuery("JoinedEvent");

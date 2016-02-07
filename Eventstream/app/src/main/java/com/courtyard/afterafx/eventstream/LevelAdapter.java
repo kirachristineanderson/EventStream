@@ -12,13 +12,16 @@ import com.parse.ParseUser;
 public class LevelAdapter extends ParseQueryAdapter<Event> {
 
     public LevelAdapter(Context context) {
+
         super(context, new ParseQueryAdapter.QueryFactory<Event>() {
             public ParseQuery<Event> create() {
                 ParseQuery query = new ParseQuery("Event");
-                query.whereEqualTo("eventCreator", ParseUser.getCurrentUser());
+                //query.whereEqualTo("eventCreator", ParseUser.getCurrentUser());
                 return query;
             }
         });
+
+
     }
 
     @Override

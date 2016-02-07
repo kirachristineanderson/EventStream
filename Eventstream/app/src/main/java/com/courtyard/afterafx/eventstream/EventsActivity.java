@@ -24,7 +24,8 @@ public class EventsActivity extends ListActivity {
         setContentView(R.layout.activity_events);
 
         //Initialize main ParseQueryAdapter
-        mainAdapter = new ParseQueryAdapter<ParseObject>(this, Event.class);
+
+        mainAdapter = new ParseQueryAdapter<ParseObject>(this, JoinedEvent.class);
         mainAdapter.setTextKey("eventName");
         mainAdapter.setImageKey("eventAvatar");
 
@@ -34,6 +35,7 @@ public class EventsActivity extends ListActivity {
 
         //Initialize ListView and set initial view to mainAdapter
         setListAdapter(levelAdapter);
+
 
         updateList();
 

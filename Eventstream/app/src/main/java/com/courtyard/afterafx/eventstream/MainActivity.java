@@ -31,6 +31,7 @@ import com.parse.ParseFile;
 public class MainActivity extends Activity {
 
     private Camera mCamera;
+    private CameraPreview mPreview;
     public static byte[] scaledPhoto;
     public String currentEvent;
     private ParseFile image;
@@ -66,7 +67,7 @@ public class MainActivity extends Activity {
 
 
         // Create our Preview view and set it as the content of our activity.
-        CameraPreview mPreview = new CameraPreview(this, mCamera);
+        mPreview = new CameraPreview(this, mCamera);
         final FrameLayout preview = (FrameLayout) findViewById(R.id.camera_preview);
         preview.addView(mPreview);
 
@@ -189,12 +190,6 @@ public class MainActivity extends Activity {
      * ---------------------------------------------------
      */
 
-    protected void onDestroy() {
-        super.onDestroy();
-        if (mCamera != null) {
-            mCamera.release();
-        }
-    }
 
     //onPause
     //Called when the app is paused by either pressing the BACK or HOME key
@@ -205,27 +200,12 @@ public class MainActivity extends Activity {
 
     @Override
     protected void onPause() {
-        //super.onPause();
-
-        Log.d(TAG, "onPause");
-
-        //isFinishing() called when app is closing!
-        //Releases the Camera fully
-        if (this.isFinishing()) {
-            //Release the camera when app is closed to background or exited
+        if(mCamera != null) {
+            mCamera.stopPreview();
+            mPreview.setCamera(null);
             mCamera.release();
             mCamera = null;
-            Log.d(TAG, "isFinishing()");
         }
-
-        //Called when switching between activities!
-        // Only stops the preview but does not release the Camera
-        if (mCamera != null && !this.isFinishing()) {
-            mCamera.stopPreview();
-            //mCamera.release();
-            Log.d(TAG, "NOT isFinishing()");
-        }
-
         super.onPause();
 
     }
@@ -239,13 +219,13 @@ public class MainActivity extends Activity {
     @Override
     protected void onResume() {
         super.onResume();
-        Log.d(TAG, "onResume");
-        if (mCamera == null) {
-            try {
-                mCamera = Camera.open();
-            } catch (Exception e) {
-                Log.i(TAG, "No camera: " + e.getMessage());
-                //Toast.makeText(getActivity(), "No camera detected", Toast.LENGTH_LONG).show();
+        int numCams = Camera.getNumberOfCameras();
+        if(numCams > 0){
+            try{
+                mCamera = Camera.open(0);
+                mCamera.startPreview();
+                mPreview.setCamera(mCamera);
+            } catch (RuntimeException ex){
             }
         }
     }
