@@ -22,6 +22,7 @@ import com.parse.ParseInstallation;
 //Activity which displays a login screen to the user, offering registration as well
 /**--------------------------------------------------------*/
 
+//oh hey
 public class LoginActivity extends Activity {
     // UI references.
     private EditText usernameTextEdit;
