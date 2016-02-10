@@ -9,10 +9,19 @@ import android.widget.Button;
 
 /** Activity that displays our Welcome screen, gives users an option to sign in or sign up!*/
 
+//only pushing the app folder test
+
+
 public class WelcomeActivity extends Activity {
+    static int testloadonlyappfolder;
+    static int testloadonlyappfolder2;
+    static int testloadonlyappfolder3;
+    static int testloadonlyappfolder4;
+    static int testloadonlyappfolder5;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
 
