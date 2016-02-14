@@ -50,10 +50,12 @@ public class EventsActivity extends ListActivity {
                         String eventName = event.getName();
                         String eventDescription = event.getDescription();
                         int eventId = event.getEventId();
+                        boolean isPrivate = event.isPrivate();
                         Intent intent = new Intent(EventsActivity.this, JoinActivity.class);
                         intent.putExtra("Name", eventName);
                         intent.putExtra("Description", eventDescription);
                         intent.putExtra("EventID", eventId);
+                        intent.putExtra("Private", isPrivate);
                         startActivity(intent);
                     }
                 });

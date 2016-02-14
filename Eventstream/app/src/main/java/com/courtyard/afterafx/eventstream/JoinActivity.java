@@ -27,6 +27,7 @@ public class JoinActivity extends Activity {
         final String eventName = intent.getStringExtra("Name");
         final String eventDescription = intent.getStringExtra("Description");
         final int eventID = intent.getIntExtra("EventID", 0);
+        final boolean isPrivate = intent.getBooleanExtra("Private", false);
 
         TextView name = (TextView) findViewById(R.id.joinEventName);
         name.setText(eventName);
@@ -43,19 +44,42 @@ public class JoinActivity extends Activity {
                                 .setMessage("Are you sure you want to join this event?")
                                 .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                                     public void onClick(DialogInterface dialog, int which) {
-                                        // continue with Join
-                                        JoinedEvent joinedEvent = new JoinedEvent();
-                                        joinedEvent.setUser(ParseUser.getCurrentUser());
-                                        joinedEvent.setEventId(eventID);
-                                        joinedEvent.setName(eventName);
-                                        joinedEvent.setDescription(eventDescription);
 
-                                        joinedEvent.saveInBackground(new SaveCallback() {
-                                            @Override
-                                            public void done(ParseException e) {
+                                        if (isPrivate == false) {
+                                            // continue with Join
+                                            JoinedEvent joinedEvent = new JoinedEvent();
+                                            joinedEvent.setUser(ParseUser.getCurrentUser());
+                                            joinedEvent.setEventId(eventID);
+                                            joinedEvent.setName(eventName);
 
-                                            }
-                                        });
+                                            if(eventDescription != null)
+                                                joinedEvent.setDescription(eventDescription);
+
+                                            joinedEvent.saveInBackground(new SaveCallback() {
+                                                @Override
+                                                public void done(ParseException e) {
+
+                                                }
+                                            });
+                                            new AlertDialog.Builder(context).setMessage("You have successfully joined this event!")
+                                                    .setIcon(android.R.drawable.ic_dialog_alert)
+                                                    .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
+                                                        public void onClick(DialogInterface dialog, int which) {
+                                                            // do nothing
+                                                        }
+                                                    })
+                                                    .show();
+                                        }
+                                        else{
+                                                new AlertDialog.Builder(context).setMessage("Sorry this is a private event!")
+                                                        .setIcon(android.R.drawable.ic_dialog_alert)
+                                                        .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
+                                                            public void onClick(DialogInterface dialog, int which) {
+                                                                // do nothing
+                                                            }
+                                                        })
+                                                    .show();
+                                        }
                                     }
                                 })
                                 .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
@@ -70,4 +94,5 @@ public class JoinActivity extends Activity {
                 }
         );
     }
+
 }
