@@ -29,6 +29,13 @@ public class PhotoParse extends ParseObject {
         put("image", file);
     }
 
+    public void setEventID(int ID){
+        put("eventID", ID);
+    }
+    public int getEventID(){
+        return getInt("eventID");
+    }
+
     public ParseUser getUser(){
         return getParseUser("user");
     }
