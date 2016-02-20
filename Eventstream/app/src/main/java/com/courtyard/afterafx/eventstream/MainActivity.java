@@ -9,9 +9,12 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
+import android.Manifest;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.Fragment;
 import android.app.FragmentManager;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -20,6 +23,8 @@ import android.hardware.Camera;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
+import android.support.design.widget.Snackbar;
+import android.support.v4.app.ActivityCompat;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -38,6 +43,10 @@ public class MainActivity extends Activity {
     private ParseFile thumbnail;
 
     private static final int MEDIA_TYPE_IMAGE = 1;
+    private static final int REQUEST_CAMERA = 0;
+    private static final int REQUEST_CONTACTS = 0;
+
+    private static String[] PERMISSIONS_CONTACT = {Manifest.permission.READ_CONTACTS, Manifest.permission.WRITE_CONTACTS};
 
     private final static String TAG = "MainActivity";
 
@@ -60,6 +69,8 @@ public class MainActivity extends Activity {
         Button profileButton = (Button) findViewById(R.id.button_profile);
         Button eventsButton = (Button) findViewById(R.id.button_events);
         Button createButton = (Button) findViewById(R.id.button_create);
+
+        requestCameraPermission();
 
 
         // Create an instance of Camera
@@ -133,6 +144,7 @@ public class MainActivity extends Activity {
 
                         /**--------------------------------------------------------*/
 
+                        eventSelection();
 
                         //After taking a picture, open the CameraFragment
                         FragmentManager manager = getFragmentManager();
@@ -351,4 +363,48 @@ public class MainActivity extends Activity {
     }
 
     /**---------------------------------------------------*/
+
+    public void eventSelection(){
+        CharSequence nearbyEvents[] =  new CharSequence[] {"Event 1", "Event 2", "Event 3", "Event 4"};
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Pick an Event");
+        builder.setItems(nearbyEvents, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                //the user clicked on an event
+            }
+        });
+        builder.show();
+    }
+
+    /**---------------------------------------------------*/
+
+    /**Requests the Camera permissions.
+     * If the permission has been denided previously,
+     * a SnackBar will prompt the user to grant the permission,
+     * otherwise it is requested directly.
+     */
+
+    private void requestCameraPermission(){
+        Log.i(TAG, "Camera permission has NOT been granted. Reuqesting permission.");
+
+        if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.CAMERA)){
+            Log.i(TAG, "Displaying camera permission rationale to provide additional context.");
+            Snackbar.make(mPreview, R.string.permission_rationale, Snackbar.LENGTH_INDEFINITE).setAction(R.string.permission_rationale, new View.OnClickListener(){
+                @Override
+                public void onClick(View view){
+                    ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.CAMERA}, REQUEST_CAMERA);
+                }
+            })
+            .show();
+        } else {
+
+            /**Camera permission has not been granted yet.
+             *  Request it directly.
+             */
+
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA}, REQUEST_CAMERA);
+        }
+    }
+
 }

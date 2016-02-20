@@ -94,8 +94,8 @@ public class CreateEvent extends AppCompatActivity {
         ParseGeoPoint p1 = null;
 
         try {
-            //address = coder.getFromLocationName(strAddress, 5);
-            address = coder.getFromLocationName("10721 Fullbright Ave, Chatsworth, CA", 5);
+            address = coder.getFromLocationName(strAddress, 5);
+            //address = coder.getFromLocationName("10721 Fullbright Ave, Chatsworth, CA", 5);
             if (address == null) {
                 return null;
             }

@@ -2,123 +2,123 @@
 <items version="2" >
 
     <item
-        jar="C:\Users\Chris&apos;s Profile\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.3.1\ecb6e1f8e4b0e84c4b886c2f14a1500caf309757\gson-2.3.1.jar"
+        jar="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/exploded-aar/Eventstream/ParseUI-Login/unspecified/jars/classes.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="ecb6e1f8e4b0e84c4b886c2f14a1500caf309757">
-        <dex dex="C:\Users\Chris&apos;s Profile\Desktop\Github\EventStream\Eventstream\app\build\intermediates\pre-dexed\debug\gson-2.3.1-c490a43b6b2a69861ffd8ff1ace6677ac0e07d9f.jar" />
+        sha1="a29bce33bfb5730611d4eae2a469e728841dfaa4">
+        <dex dex="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/classes-c33bffad60c69497281460aee50c3d8fc0c50a30.jar" />
     </item>
     <item
-        jar="C:\Users\Chris&apos;s Profile\Desktop\Github\EventStream\Eventstream\app\build\intermediates\exploded-aar\Eventstream\ParseUI-Widget\unspecified\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="fa3561b1fe3cea6d14b63e0c13a208a4f86909a1">
-        <dex dex="C:\Users\Chris&apos;s Profile\Desktop\Github\EventStream\Eventstream\app\build\intermediates\pre-dexed\debug\classes-c0121b99681627406e5d4332969f78ec0fd836a7.jar" />
-    </item>
-    <item
-        jar="C:\Users\Chris&apos;s Profile\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-applinks\1.4.0\8ad21bf21784dacce5f2043afb97218cc377e835\bolts-applinks-1.4.0.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="8ad21bf21784dacce5f2043afb97218cc377e835">
-        <dex dex="C:\Users\Chris&apos;s Profile\Desktop\Github\EventStream\Eventstream\app\build\intermediates\pre-dexed\debug\bolts-applinks-1.4.0-67ea32dddc347b8e4443aaddfdcd96a0ed860cb7.jar" />
-    </item>
-    <item
-        jar="C:\Users\Chris&apos;s Profile\Desktop\Github\EventStream\Eventstream\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.0.1\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="d86429b0f0b3f3cafbeb78dda1b9d89119ccb05d">
-        <dex dex="C:\Users\Chris&apos;s Profile\Desktop\Github\EventStream\Eventstream\app\build\intermediates\pre-dexed\debug\classes-701736ac021d9b62b4cee652094937599cb1de9d.jar" />
-    </item>
-    <item
-        jar="C:\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.0.1\support-annotations-23.0.1.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="1fce89a6428c51467090d7f424e4c9c3dbd55f7e">
-        <dex dex="C:\Users\Chris&apos;s Profile\Desktop\Github\EventStream\Eventstream\app\build\intermediates\pre-dexed\debug\support-annotations-23.0.1-6caa1fe4da30cf2cc1676a54cb9890359b7ae5e4.jar" />
-    </item>
-    <item
-        jar="C:\Users\Chris&apos;s Profile\.gradle\caches\modules-2\files-2.1\com.parse\parse-android\1.10.1\a87cb993a12e574a216213d0b8b2b78f6da35d37\parse-android-1.10.1.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="a87cb993a12e574a216213d0b8b2b78f6da35d37">
-        <dex dex="C:\Users\Chris&apos;s Profile\Desktop\Github\EventStream\Eventstream\app\build\intermediates\pre-dexed\debug\parse-android-1.10.1-f93cf1dc929b70b93963b6697e66b9346f400b8b.jar" />
-    </item>
-    <item
-        jar="C:\Users\Chris&apos;s Profile\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.6.0\98476622f10715998eacf9240d6b479f12c66143\okio-1.6.0.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="98476622f10715998eacf9240d6b479f12c66143">
-        <dex dex="C:\Users\Chris&apos;s Profile\Desktop\Github\EventStream\Eventstream\app\build\intermediates\pre-dexed\debug\okio-1.6.0-87a63bfd93f6fd6636a29a9f7f691106f554f1e3.jar" />
-    </item>
-    <item
-        jar="C:\Users\Chris&apos;s Profile\Desktop\Github\EventStream\Eventstream\app\build\intermediates\exploded-aar\com.android.support\design\23.0.1\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="e5c61a3169221a89654ffcaaed47bba51cf071ad">
-        <dex dex="C:\Users\Chris&apos;s Profile\Desktop\Github\EventStream\Eventstream\app\build\intermediates\pre-dexed\debug\classes-45a02b3cdff9418c87986bcf20aebff512266302.jar" />
-    </item>
-    <item
-        jar="C:\Users\Chris&apos;s Profile\Desktop\Github\EventStream\Eventstream\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.1\jars\libs\internal_impl-23.0.1.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="aa92916125166649d8ad4ba3940c3dd7515596d3">
-        <dex dex="C:\Users\Chris&apos;s Profile\Desktop\Github\EventStream\Eventstream\app\build\intermediates\pre-dexed\debug\internal_impl-23.0.1-b918e7f2178ab7e9f64c252beea7bd0a4163a886.jar" />
-    </item>
-    <item
-        jar="C:\Users\Chris&apos;s Profile\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-tasks\1.4.0\d85884acf6810a3bbbecb587f239005cbc846dc4\bolts-tasks-1.4.0.jar"
+        jar="/Users/afterafx/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-tasks/1.4.0/d85884acf6810a3bbbecb587f239005cbc846dc4/bolts-tasks-1.4.0.jar"
         jumboMode="false"
         revision="23.0.1"
         sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
-        <dex dex="C:\Users\Chris&apos;s Profile\Desktop\Github\EventStream\Eventstream\app\build\intermediates\pre-dexed\debug\bolts-tasks-1.4.0-f9e9f6be46d4b375632004c8ae6b7b4b60d8dedd.jar" />
+        <dex dex="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/bolts-tasks-1.4.0-176361be7dbdb4db1f9244e2b024acb7c83072da.jar" />
     </item>
     <item
-        jar="C:\Users\Chris&apos;s Profile\.gradle\caches\modules-2\files-2.1\com.google.maps\google-maps-services\0.1.9\91d22435795d83dd186cacf6508e0aa4874d5905\google-maps-services-0.1.9.jar"
+        jar="/Users/afterafx/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.3.1/ecb6e1f8e4b0e84c4b886c2f14a1500caf309757/gson-2.3.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="ecb6e1f8e4b0e84c4b886c2f14a1500caf309757">
+        <dex dex="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/gson-2.3.1-96eea19abef4ad16181c0949500c72fcb15a93c7.jar" />
+    </item>
+    <item
+        jar="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/exploded-aar/com.android.support/design/23.0.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="e5c61a3169221a89654ffcaaed47bba51cf071ad">
+        <dex dex="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/classes-7daf82ca53b819b31b716102f800875fce5af60e.jar" />
+    </item>
+    <item
+        jar="/Users/afterafx/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.0.1/support-annotations-23.0.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="1fce89a6428c51467090d7f424e4c9c3dbd55f7e">
+        <dex dex="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/support-annotations-23.0.1-4ba9797dc32413b8233a0c9d9b6173c8d047b721.jar" />
+    </item>
+    <item
+        jar="/Users/afterafx/.gradle/caches/modules-2/files-2.1/com.google.maps/google-maps-services/0.1.9/91d22435795d83dd186cacf6508e0aa4874d5905/google-maps-services-0.1.9.jar"
         jumboMode="false"
         revision="23.0.1"
         sha1="91d22435795d83dd186cacf6508e0aa4874d5905">
-        <dex dex="C:\Users\Chris&apos;s Profile\Desktop\Github\EventStream\Eventstream\app\build\intermediates\pre-dexed\debug\google-maps-services-0.1.9-bacb715124046c88b697a00c3c2b0457cb763138.jar" />
+        <dex dex="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/google-maps-services-0.1.9-1edbac274496124bb4c507854d94385a925e745d.jar" />
     </item>
     <item
-        jar="C:\Users\Chris&apos;s Profile\Desktop\Github\EventStream\Eventstream\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\jars\classes.jar"
+        jar="/Users/afterafx/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.6.0/98476622f10715998eacf9240d6b479f12c66143/okio-1.6.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="98476622f10715998eacf9240d6b479f12c66143">
+        <dex dex="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/okio-1.6.0-ec65cab81f9493411e060ddf2691128496e21ece.jar" />
+    </item>
+    <item
+        jar="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="d86429b0f0b3f3cafbeb78dda1b9d89119ccb05d">
+        <dex dex="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/classes-8ed2f81a95d7274905a72d91656c3d905ed247ef.jar" />
+    </item>
+    <item
+        jar="/Users/afterafx/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-applinks/1.4.0/8ad21bf21784dacce5f2043afb97218cc377e835/bolts-applinks-1.4.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="8ad21bf21784dacce5f2043afb97218cc377e835">
+        <dex dex="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/bolts-applinks-1.4.0-7c584a1e519f84fc7fff19d039b240c17a00a3d4.jar" />
+    </item>
+    <item
+        jar="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.1.0/jars/classes.jar"
         jumboMode="false"
         revision="23.0.1"
         sha1="d0dda274b703dd9c5bb056867649d22b4171ae7d">
-        <dex dex="C:\Users\Chris&apos;s Profile\Desktop\Github\EventStream\Eventstream\app\build\intermediates\pre-dexed\debug\classes-adc26fbd1f88c435c5baa5130ef0652e83f458e8.jar" />
+        <dex dex="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/classes-6688a56c67c8607fb3f00e74765a28939a8327f0.jar" />
     </item>
     <item
-        jar="C:\Users\Chris&apos;s Profile\Desktop\Github\EventStream\Eventstream\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.1\jars\classes.jar"
+        jar="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/jars/classes.jar"
         jumboMode="false"
         revision="23.0.1"
         sha1="c31e21b53ff2f74664e498248d01453a32e32d48">
-        <dex dex="C:\Users\Chris&apos;s Profile\Desktop\Github\EventStream\Eventstream\app\build\intermediates\pre-dexed\debug\classes-9df2a8478bcf117203e331e641a98f7eea91c469.jar" />
+        <dex dex="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/classes-2fd1d89132ab2b7463968f5c10274c770382fb6e.jar" />
     </item>
     <item
-        jar="C:\Users\Chris&apos;s Profile\Desktop\Github\EventStream\Eventstream\app\build\intermediates\exploded-aar\Eventstream\ParseUI-Login\unspecified\jars\classes.jar"
+        jar="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/exploded-aar/Eventstream/ParseUI-Widget/unspecified/jars/classes.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="ade1a32d28f1b3f261f46104e8d5979942320e59">
-        <dex dex="C:\Users\Chris&apos;s Profile\Desktop\Github\EventStream\Eventstream\app\build\intermediates\pre-dexed\debug\classes-85ac82ffb6d738247e3c074615d6a512115a63c4.jar" />
+        sha1="3361fdc6e6337724bd653780dbe462d7f44d0d76">
+        <dex dex="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/classes-91c25bf3d20f3cc7a3fd48cc8605026f931adabc.jar" />
     </item>
     <item
-        jar="C:\Users\Chris&apos;s Profile\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp\okhttp\2.5.0\4de2b4ed3445c37ec1720a7d214712e845a24636\okhttp-2.5.0.jar"
+        jar="/Users/afterafx/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp/okhttp/2.5.0/4de2b4ed3445c37ec1720a7d214712e845a24636/okhttp-2.5.0.jar"
         jumboMode="false"
         revision="23.0.1"
         sha1="4de2b4ed3445c37ec1720a7d214712e845a24636">
-        <dex dex="C:\Users\Chris&apos;s Profile\Desktop\Github\EventStream\Eventstream\app\build\intermediates\pre-dexed\debug\okhttp-2.5.0-5cdb0c64c82a0c3bae23d738108cef93495b4fcc.jar" />
+        <dex dex="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/okhttp-2.5.0-cffe092647798a2353921423cbd7bb5fd0b7c0ee.jar" />
     </item>
     <item
-        jar="C:\Users\Chris&apos;s Profile\Desktop\Github\EventStream\Eventstream\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appindexing\8.1.0\jars\classes.jar"
+        jar="/Users/afterafx/.gradle/caches/modules-2/files-2.1/com.parse/parse-android/1.10.1/a87cb993a12e574a216213d0b8b2b78f6da35d37/parse-android-1.10.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="a87cb993a12e574a216213d0b8b2b78f6da35d37">
+        <dex dex="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/parse-android-1.10.1-a615939c108d507d37288d42f427162ed91c5ee0.jar" />
+    </item>
+    <item
+        jar="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/jars/libs/internal_impl-23.0.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="aa92916125166649d8ad4ba3940c3dd7515596d3">
+        <dex dex="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/internal_impl-23.0.1-224d1e929b3c9dc12528f0f58e691cee88044e2f.jar" />
+    </item>
+    <item
+        jar="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appindexing/8.1.0/jars/classes.jar"
         jumboMode="false"
         revision="23.0.1"
         sha1="4477ea44f5ec5ad064022a22691732d7638ff197">
-        <dex dex="C:\Users\Chris&apos;s Profile\Desktop\Github\EventStream\Eventstream\app\build\intermediates\pre-dexed\debug\classes-6ca61298f6cff6e7c78fffadf395944609585763.jar" />
+        <dex dex="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/classes-70d2a316d266bb51be82d840eac7d63eaf69651d.jar" />
     </item>
     <item
-        jar="C:\Users\Chris&apos;s Profile\.gradle\caches\modules-2\files-2.1\joda-time\joda-time\2.4\89e9725439adffbbd41c5f5c215c136082b34a7f\joda-time-2.4.jar"
+        jar="/Users/afterafx/.gradle/caches/modules-2/files-2.1/joda-time/joda-time/2.4/89e9725439adffbbd41c5f5c215c136082b34a7f/joda-time-2.4.jar"
         jumboMode="false"
         revision="23.0.1"
         sha1="89e9725439adffbbd41c5f5c215c136082b34a7f">
-        <dex dex="C:\Users\Chris&apos;s Profile\Desktop\Github\EventStream\Eventstream\app\build\intermediates\pre-dexed\debug\joda-time-2.4-bd25bceb13be84cd0588ec9f7d5b4f8f7e216d0d.jar" />
+        <dex dex="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/joda-time-2.4-1f7ceb89bc381a3043f4ae981c82a1510ad81b5b.jar" />
     </item>
 
 </items>
