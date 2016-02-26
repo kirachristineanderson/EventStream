@@ -2,9 +2,7 @@ package com.courtyard.afterafx.eventstream;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
@@ -22,13 +20,10 @@ import com.parse.ParseInstallation;
 //Activity which displays a login screen to the user, offering registration as well
 /**--------------------------------------------------------*/
 
-//oh hey
 public class LoginActivity extends Activity {
     // UI references.
     private EditText usernameTextEdit;
     private EditText passwordTextEdit;
-    public static final String MyPREFERENCES = "MyPrefs" ;
-    SharedPreferences sharedpreferences;
 
     /**--------------------------------------------------------*/
 
@@ -38,7 +33,6 @@ public class LoginActivity extends Activity {
 
         setContentView(R.layout.activity_login);
 
-        sharedpreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
 
         // Set up the login form.
         usernameTextEdit = (EditText) findViewById(R.id.username);
@@ -48,23 +42,18 @@ public class LoginActivity extends Activity {
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                 if (actionId == R.id.edittext_action_login ||
                         actionId == EditorInfo.IME_ACTION_UNSPECIFIED) {
-                    login(null, null);
+                    login();
                     return true;
                 }
                 return false;
             }
         });
 
-        if(sharedpreferences.contains("username") && sharedpreferences.contains("password")){
-            login(sharedpreferences.getString("username", null), sharedpreferences.getString("password", null));
-        }
-
         // Set up the submit button click handler
         Button signInButton = (Button) findViewById(R.id.signin_button);
         signInButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-
-                login(null, null);
+                login();
 
             }
         });
@@ -72,20 +61,12 @@ public class LoginActivity extends Activity {
 
     /**--------------------------------------------------------*/
 
-    private void login(String username, String password) {
+    private void login() {
+        //String username = usernameTextEdit.getText().toString().trim();
+        //String password = passwordTextEdit.getText().toString().trim();
 
-        username = "afterafx";
-        password = "hacker";
-
-        if(username == null || password == null) {
-            username = usernameTextEdit.getText().toString().trim();
-            password = passwordTextEdit.getText().toString().trim();
-
-            SharedPreferences.Editor editor = sharedpreferences.edit();
-            editor.putString("username", username);
-            editor.putString("password", password);
-            editor.commit();
-        }
+        String username = "afterafx";
+        String password = "hacker";
 
         // Validate the log in data
         boolean validationError = false;
@@ -123,7 +104,6 @@ public class LoginActivity extends Activity {
                     // Show the error message
                     Toast.makeText(LoginActivity.this, e.getMessage(), Toast.LENGTH_LONG).show();
                 } else {
-
                     // Start an intent for the dispatch activity
                     Intent intent = new Intent(LoginActivity.this, DispatchActivity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);

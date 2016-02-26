@@ -30,7 +30,7 @@
                 android:textColorHint="#FFFFFF"
                 android:layout_above="@+id/password"
                 android:layout_centerHorizontal="true"
-                 />
+                android:text="Username" />
 
             <EditText
                 android:id="@+id/password"

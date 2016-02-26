@@ -7,14 +7,15 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 
-import android.Manifest;
 import android.app.Activity;
-import android.app.AlertDialog;
+import android.app.ActivityManager;
 import android.app.Fragment;
 import android.app.FragmentManager;
-import android.content.DialogInterface;
+import android.content.ComponentName;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -23,8 +24,6 @@ import android.hardware.Camera;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.ActivityCompat;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -32,21 +31,18 @@ import android.widget.FrameLayout;
 
 import com.parse.ParseFile;
 
+//Happy 2016! New Semester YAY!
+
 
 public class MainActivity extends Activity {
 
     private Camera mCamera;
-    private CameraPreview mPreview;
     public static byte[] scaledPhoto;
     public String currentEvent;
     private ParseFile image;
     private ParseFile thumbnail;
 
     private static final int MEDIA_TYPE_IMAGE = 1;
-    private static final int REQUEST_CAMERA = 0;
-    private static final int REQUEST_CONTACTS = 0;
-
-    private static String[] PERMISSIONS_CONTACT = {Manifest.permission.READ_CONTACTS, Manifest.permission.WRITE_CONTACTS};
 
     private final static String TAG = "MainActivity";
 
@@ -70,15 +66,13 @@ public class MainActivity extends Activity {
         Button eventsButton = (Button) findViewById(R.id.button_events);
         Button createButton = (Button) findViewById(R.id.button_create);
 
-        requestCameraPermission();
-
 
         // Create an instance of Camera
         mCamera = getCameraInstance();
 
 
         // Create our Preview view and set it as the content of our activity.
-        mPreview = new CameraPreview(this, mCamera);
+        CameraPreview mPreview = new CameraPreview(this, mCamera);
         final FrameLayout preview = (FrameLayout) findViewById(R.id.camera_preview);
         preview.addView(mPreview);
 
@@ -144,7 +138,6 @@ public class MainActivity extends Activity {
 
                         /**--------------------------------------------------------*/
 
-                        eventSelection();
 
                         //After taking a picture, open the CameraFragment
                         FragmentManager manager = getFragmentManager();
@@ -202,6 +195,12 @@ public class MainActivity extends Activity {
      * ---------------------------------------------------
      */
 
+    protected void onDestroy() {
+        super.onDestroy();
+        if (mCamera != null) {
+            mCamera.release();
+        }
+    }
 
     //onPause
     //Called when the app is paused by either pressing the BACK or HOME key
@@ -212,12 +211,27 @@ public class MainActivity extends Activity {
 
     @Override
     protected void onPause() {
-        if(mCamera != null) {
-            mCamera.stopPreview();
-            mPreview.setCamera(null);
+        //super.onPause();
+
+        Log.d(TAG, "onPause");
+
+        //isFinishing() called when app is closing!
+        //Releases the Camera fully
+        if (this.isFinishing()) {
+            //Release the camera when app is closed to background or exited
             mCamera.release();
             mCamera = null;
+            Log.d(TAG, "isFinishing()");
         }
+
+        //Called when switching between activities!
+        // Only stops the preview but does not release the Camera
+        if (mCamera != null && !this.isFinishing()) {
+            mCamera.stopPreview();
+            //mCamera.release();
+            Log.d(TAG, "NOT isFinishing()");
+        }
+
         super.onPause();
 
     }
@@ -231,17 +245,33 @@ public class MainActivity extends Activity {
     @Override
     protected void onResume() {
         super.onResume();
-        int numCams = Camera.getNumberOfCameras();
-        if(numCams > 0){
-            try{
-                mCamera = Camera.open(0);
-                mCamera.startPreview();
-                mPreview.setCamera(mCamera);
-            } catch (RuntimeException ex){
+        Log.d(TAG, "onResume");
+
+        if (mCamera == null) {
+            try {
+                mCamera = Camera.open();
+            } catch (Exception e) {
+                Log.i(TAG, "No camera: " + e.getMessage());
+                //Toast.makeText(getActivity(), "No camera detected", Toast.LENGTH_LONG).show();
             }
         }
     }
 
+    /*
+    Returns true if our app is sent to the background. Returns false otherwise.
+     */
+    public static boolean isApplicationSentToBackground(final Context context) {
+        ActivityManager am = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
+        List<ActivityManager.RunningTaskInfo> tasks = am.getRunningTasks(1);
+        if (!tasks.isEmpty()) {
+            ComponentName topActivity = tasks.get(0).topActivity;
+            if (!topActivity.getPackageName().equals(context.getPackageName())) {
+                return true;
+            }
+        }
+
+        return false;
+    }
 
     // Setters & Getters
 
@@ -363,48 +393,4 @@ public class MainActivity extends Activity {
     }
 
     /**---------------------------------------------------*/
-
-    public void eventSelection(){
-        CharSequence nearbyEvents[] =  new CharSequence[] {"Event 1", "Event 2", "Event 3", "Event 4"};
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Pick an Event");
-        builder.setItems(nearbyEvents, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                //the user clicked on an event
-            }
-        });
-        builder.show();
-    }
-
-    /**---------------------------------------------------*/
-
-    /**Requests the Camera permissions.
-     * If the permission has been denided previously,
-     * a SnackBar will prompt the user to grant the permission,
-     * otherwise it is requested directly.
-     */
-
-    private void requestCameraPermission(){
-        Log.i(TAG, "Camera permission has NOT been granted. Reuqesting permission.");
-
-        if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.CAMERA)){
-            Log.i(TAG, "Displaying camera permission rationale to provide additional context.");
-            Snackbar.make(mPreview, R.string.permission_rationale, Snackbar.LENGTH_INDEFINITE).setAction(R.string.permission_rationale, new View.OnClickListener(){
-                @Override
-                public void onClick(View view){
-                    ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.CAMERA}, REQUEST_CAMERA);
-                }
-            })
-            .show();
-        } else {
-
-            /**Camera permission has not been granted yet.
-             *  Request it directly.
-             */
-
-            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA}, REQUEST_CAMERA);
-        }
-    }
-
 }

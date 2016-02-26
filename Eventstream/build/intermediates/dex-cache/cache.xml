@@ -2,123 +2,263 @@
 <items version="2" >
 
     <item
-        jar="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/exploded-aar/Eventstream/ParseUI-Login/unspecified/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="a29bce33bfb5730611d4eae2a469e728841dfaa4">
-        <dex dex="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/classes-c33bffad60c69497281460aee50c3d8fc0c50a30.jar" />
-    </item>
-    <item
-        jar="/Users/afterafx/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-tasks/1.4.0/d85884acf6810a3bbbecb587f239005cbc846dc4/bolts-tasks-1.4.0.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
-        <dex dex="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/bolts-tasks-1.4.0-176361be7dbdb4db1f9244e2b024acb7c83072da.jar" />
-    </item>
-    <item
-        jar="/Users/afterafx/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.3.1/ecb6e1f8e4b0e84c4b886c2f14a1500caf309757/gson-2.3.1.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="ecb6e1f8e4b0e84c4b886c2f14a1500caf309757">
-        <dex dex="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/gson-2.3.1-96eea19abef4ad16181c0949500c72fcb15a93c7.jar" />
-    </item>
-    <item
-        jar="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/exploded-aar/com.android.support/design/23.0.1/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="e5c61a3169221a89654ffcaaed47bba51cf071ad">
-        <dex dex="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/classes-7daf82ca53b819b31b716102f800875fce5af60e.jar" />
-    </item>
-    <item
-        jar="/Users/afterafx/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.0.1/support-annotations-23.0.1.jar"
+        jar="/Users/RekMor/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.0.1/support-annotations-23.0.1.jar"
         jumboMode="false"
         revision="23.0.1"
         sha1="1fce89a6428c51467090d7f424e4c9c3dbd55f7e">
-        <dex dex="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/support-annotations-23.0.1-4ba9797dc32413b8233a0c9d9b6173c8d047b721.jar" />
+        <dex dex="/Users/RekMor/Desktop/rek/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/support-annotations-23.0.1-014a2041746da0a5c4a74c47554dbab065dea424.jar" />
     </item>
     <item
-        jar="/Users/afterafx/.gradle/caches/modules-2/files-2.1/com.google.maps/google-maps-services/0.1.9/91d22435795d83dd186cacf6508e0aa4874d5905/google-maps-services-0.1.9.jar"
+        jar="/Users/RekMor/Desktop/rek/EventStream/Eventstream/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/8.4.0/jars/classes.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="91d22435795d83dd186cacf6508e0aa4874d5905">
-        <dex dex="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/google-maps-services-0.1.9-1edbac274496124bb4c507854d94385a925e745d.jar" />
+        sha1="a8412b654dab86d57bf90683367488211c8a81f1">
+        <dex dex="/Users/RekMor/Desktop/rek/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/classes-79a36778e3dca720815005a31c83f707a846b059.jar" />
     </item>
     <item
-        jar="/Users/afterafx/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.6.0/98476622f10715998eacf9240d6b479f12c66143/okio-1.6.0.jar"
+        jar="/Users/RekMor/Desktop/rek/EventStream/Eventstream/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.4.0/jars/classes.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="98476622f10715998eacf9240d6b479f12c66143">
-        <dex dex="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/okio-1.6.0-ec65cab81f9493411e060ddf2691128496e21ece.jar" />
+        sha1="8e673cdfadd8f2d98fdb2fda2285c30f6e449782">
+        <dex dex="/Users/RekMor/Desktop/rek/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/classes-162add74918a4771ee55f6228b3f72b05f4c3e49.jar" />
     </item>
     <item
-        jar="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/jars/classes.jar"
+        jar="/Users/RekMor/Desktop/rek/EventStream/Eventstream/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gcm/8.4.0/jars/classes.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="d86429b0f0b3f3cafbeb78dda1b9d89119ccb05d">
-        <dex dex="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/classes-8ed2f81a95d7274905a72d91656c3d905ed247ef.jar" />
+        sha1="2d7fe76982677315c4dc4edfb459c8ca718a9d4c">
+        <dex dex="/Users/RekMor/Desktop/rek/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/classes-9a79fc8e0ac86495d3c51d6a8199ffbb42304d5a.jar" />
     </item>
     <item
-        jar="/Users/afterafx/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-applinks/1.4.0/8ad21bf21784dacce5f2043afb97218cc377e835/bolts-applinks-1.4.0.jar"
+        jar="/Users/RekMor/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-tasks/1.4.0/d85884acf6810a3bbbecb587f239005cbc846dc4/bolts-tasks-1.4.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
+        <dex dex="/Users/RekMor/Desktop/rek/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/bolts-tasks-1.4.0-0bae8467b8367dff3be7341eac535d4a5949783d.jar" />
+    </item>
+    <item
+        jar="/Users/RekMor/Desktop/rek/EventStream/Eventstream/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-nearby/8.4.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="9cad249cf62751a323d9af568caf12284b7d6062">
+        <dex dex="/Users/RekMor/Desktop/rek/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/classes-a68d41f9405fb5e450b08233ffcc4db248ee9e7b.jar" />
+    </item>
+    <item
+        jar="/Users/RekMor/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-applinks/1.4.0/8ad21bf21784dacce5f2043afb97218cc377e835/bolts-applinks-1.4.0.jar"
         jumboMode="false"
         revision="23.0.1"
         sha1="8ad21bf21784dacce5f2043afb97218cc377e835">
-        <dex dex="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/bolts-applinks-1.4.0-7c584a1e519f84fc7fff19d039b240c17a00a3d4.jar" />
+        <dex dex="/Users/RekMor/Desktop/rek/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/bolts-applinks-1.4.0-412819eabbf84bbd7d6d80eab029470fd98e965b.jar" />
     </item>
     <item
-        jar="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.1.0/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="d0dda274b703dd9c5bb056867649d22b4171ae7d">
-        <dex dex="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/classes-6688a56c67c8607fb3f00e74765a28939a8327f0.jar" />
-    </item>
-    <item
-        jar="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="c31e21b53ff2f74664e498248d01453a32e32d48">
-        <dex dex="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/classes-2fd1d89132ab2b7463968f5c10274c770382fb6e.jar" />
-    </item>
-    <item
-        jar="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/exploded-aar/Eventstream/ParseUI-Widget/unspecified/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="3361fdc6e6337724bd653780dbe462d7f44d0d76">
-        <dex dex="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/classes-91c25bf3d20f3cc7a3fd48cc8605026f931adabc.jar" />
-    </item>
-    <item
-        jar="/Users/afterafx/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp/okhttp/2.5.0/4de2b4ed3445c37ec1720a7d214712e845a24636/okhttp-2.5.0.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="4de2b4ed3445c37ec1720a7d214712e845a24636">
-        <dex dex="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/okhttp-2.5.0-cffe092647798a2353921423cbd7bb5fd0b7c0ee.jar" />
-    </item>
-    <item
-        jar="/Users/afterafx/.gradle/caches/modules-2/files-2.1/com.parse/parse-android/1.10.1/a87cb993a12e574a216213d0b8b2b78f6da35d37/parse-android-1.10.1.jar"
+        jar="/Users/RekMor/.gradle/caches/modules-2/files-2.1/com.parse/parse-android/1.10.1/a87cb993a12e574a216213d0b8b2b78f6da35d37/parse-android-1.10.1.jar"
         jumboMode="false"
         revision="23.0.1"
         sha1="a87cb993a12e574a216213d0b8b2b78f6da35d37">
-        <dex dex="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/parse-android-1.10.1-a615939c108d507d37288d42f427162ed91c5ee0.jar" />
+        <dex dex="/Users/RekMor/Desktop/rek/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/parse-android-1.10.1-2b3ef81972905888328b1c01bee114763a376757.jar" />
     </item>
     <item
-        jar="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/jars/libs/internal_impl-23.0.1.jar"
+        jar="/Users/RekMor/Desktop/rek/EventStream/Eventstream/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast/8.4.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="551e78f21acf69ebfb489c0e79647824c838013e">
+        <dex dex="/Users/RekMor/Desktop/rek/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/classes-cc137b9b1e0b76306e468156267226196684ad61.jar" />
+    </item>
+    <item
+        jar="/Users/RekMor/Desktop/rek/EventStream/Eventstream/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/jars/libs/internal_impl-23.0.1.jar"
         jumboMode="false"
         revision="23.0.1"
         sha1="aa92916125166649d8ad4ba3940c3dd7515596d3">
-        <dex dex="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/internal_impl-23.0.1-224d1e929b3c9dc12528f0f58e691cee88044e2f.jar" />
+        <dex dex="/Users/RekMor/Desktop/rek/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/internal_impl-23.0.1-9464e3a514d7dbe25f8fdb60fb70460bf132ec5c.jar" />
     </item>
     <item
-        jar="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appindexing/8.1.0/jars/classes.jar"
+        jar="/Users/RekMor/Desktop/rek/EventStream/Eventstream/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/23.0.0/jars/libs/internal_impl-23.0.0.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="4477ea44f5ec5ad064022a22691732d7638ff197">
-        <dex dex="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/classes-70d2a316d266bb51be82d840eac7d63eaf69651d.jar" />
+        sha1="03d38bb042efe3e5ce27ba66b729a9523c36d8fe">
+        <dex dex="/Users/RekMor/Desktop/rek/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/internal_impl-23.0.0-8251f8ac0cdd01bd45288d956c4b628936f640e3.jar" />
     </item>
     <item
-        jar="/Users/afterafx/.gradle/caches/modules-2/files-2.1/joda-time/joda-time/2.4/89e9725439adffbbd41c5f5c215c136082b34a7f/joda-time-2.4.jar"
+        jar="/Users/RekMor/Desktop/rek/EventStream/Eventstream/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/8.4.0/jars/classes.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="89e9725439adffbbd41c5f5c215c136082b34a7f">
-        <dex dex="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/joda-time-2.4-1f7ceb89bc381a3043f4ae981c82a1510ad81b5b.jar" />
+        sha1="04de44f90606c77f3b28cf44861f306290505aac">
+        <dex dex="/Users/RekMor/Desktop/rek/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/classes-45788505c76c81bb7d7a253da0e66a8dfe3d1a30.jar" />
+    </item>
+    <item
+        jar="/Users/RekMor/Desktop/rek/EventStream/Eventstream/app/build/intermediates/exploded-aar/Eventstream/ParseUI-Login/unspecified/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="f88a19964f765925bad74d751eb252dc69f6f88c">
+        <dex dex="/Users/RekMor/Desktop/rek/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/classes-a7a560daf7cf98bcbd249d779a1a512f6c24d04a.jar" />
+    </item>
+    <item
+        jar="/Users/RekMor/Desktop/rek/EventStream/Eventstream/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-panorama/8.4.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="08d34b2d135c1cc96ab506fd8bf6916d1e2f391a">
+        <dex dex="/Users/RekMor/Desktop/rek/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/classes-effb3f942c35b985f2c7697177d06113ff496050.jar" />
+    </item>
+    <item
+        jar="/Users/RekMor/Desktop/rek/EventStream/Eventstream/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wearable/8.4.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="e167a34eaca0b31704212f43f9576ea84e05046f">
+        <dex dex="/Users/RekMor/Desktop/rek/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/classes-67a961a9de14114149a7dd85920e183495bde626.jar" />
+    </item>
+    <item
+        jar="/Users/RekMor/Desktop/rek/EventStream/Eventstream/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="d86429b0f0b3f3cafbeb78dda1b9d89119ccb05d">
+        <dex dex="/Users/RekMor/Desktop/rek/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/classes-513913e328d984796dbfd76e7de71213a2e70134.jar" />
+    </item>
+    <item
+        jar="/Users/RekMor/Desktop/rek/EventStream/Eventstream/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-measurement/8.4.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="613298b7aa012f121ce542881c0a599ebd8078f2">
+        <dex dex="/Users/RekMor/Desktop/rek/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/classes-d00df568d1b7a28c30836e3f0c233446bc93a838.jar" />
+    </item>
+    <item
+        jar="/Users/RekMor/Desktop/rek/EventStream/Eventstream/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/23.0.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="d358b3dd49a7c67844622dcbc9cf4339e13952ce">
+        <dex dex="/Users/RekMor/Desktop/rek/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/classes-ff76a0a51e0597bf0f5af627a566fa570bd78294.jar" />
+    </item>
+    <item
+        jar="/Users/RekMor/Desktop/rek/EventStream/Eventstream/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-drive/8.4.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="b36f30ac5ee5d5214f4b1e2ac49f11889d58e71a">
+        <dex dex="/Users/RekMor/Desktop/rek/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/classes-2a0ecdfec235d9a976bab473d77aa4f816c706bb.jar" />
+    </item>
+    <item
+        jar="/Users/RekMor/Desktop/rek/EventStream/Eventstream/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-fitness/8.4.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="c54246475c1bb64ac6857d1320364bfbfeda2c46">
+        <dex dex="/Users/RekMor/Desktop/rek/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/classes-88f9d31b7f3d9c228b3c4672fe378132cf42a86f.jar" />
+    </item>
+    <item
+        jar="/Users/RekMor/Desktop/rek/EventStream/Eventstream/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appindexing/8.4.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="65d086ee9daaf87b5af62ad24471edafa433354c">
+        <dex dex="/Users/RekMor/Desktop/rek/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/classes-a586b0feb974ee05ff3b1cafa048a0bf003be0fe.jar" />
+    </item>
+    <item
+        jar="/Users/RekMor/Desktop/rek/EventStream/Eventstream/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-auth/8.4.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="966e5771a5a2ebfb31bf00d7cd6cd2546d245517">
+        <dex dex="/Users/RekMor/Desktop/rek/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/classes-6766084e6d1ce4f95c9d82ff1987851af33368a0.jar" />
+    </item>
+    <item
+        jar="/Users/RekMor/Desktop/rek/EventStream/Eventstream/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-plus/8.4.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="1a78298e7724d5440d210bcb946b3493250d354d">
+        <dex dex="/Users/RekMor/Desktop/rek/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/classes-f6e22fcf08eed849c0847025aebd00ebd86eccd1.jar" />
+    </item>
+    <item
+        jar="/Users/RekMor/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp/okhttp/2.5.0/4de2b4ed3445c37ec1720a7d214712e845a24636/okhttp-2.5.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="4de2b4ed3445c37ec1720a7d214712e845a24636">
+        <dex dex="/Users/RekMor/Desktop/rek/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/okhttp-2.5.0-13ce4917d942cc84eff15f9669baa82269e22773.jar" />
+    </item>
+    <item
+        jar="/Users/RekMor/Desktop/rek/EventStream/Eventstream/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-safetynet/8.4.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="0194a7409c40de94fb539d4ad9928ec5d47afeb7">
+        <dex dex="/Users/RekMor/Desktop/rek/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/classes-755f27e385a3427b14fceba351cf5545e6401936.jar" />
+    </item>
+    <item
+        jar="/Users/RekMor/Desktop/rek/EventStream/Eventstream/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-vision/8.4.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="dfecc4d835cdabcdecf7e95f0d20a3ef1e9d8ef4">
+        <dex dex="/Users/RekMor/Desktop/rek/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/classes-17da5ab5865d03dedda7eeaddf44d4927540cfbc.jar" />
+    </item>
+    <item
+        jar="/Users/RekMor/Desktop/rek/EventStream/Eventstream/app/build/intermediates/exploded-aar/com.android.support/design/23.0.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="e5c61a3169221a89654ffcaaed47bba51cf071ad">
+        <dex dex="/Users/RekMor/Desktop/rek/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/classes-4d7f3579ffa29043de6f3933907ae910c440d6eb.jar" />
+    </item>
+    <item
+        jar="/Users/RekMor/Desktop/rek/EventStream/Eventstream/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="c31e21b53ff2f74664e498248d01453a32e32d48">
+        <dex dex="/Users/RekMor/Desktop/rek/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/classes-03e843b12d1ee977046773aa00600b932649c9fb.jar" />
+    </item>
+    <item
+        jar="/Users/RekMor/Desktop/rek/EventStream/Eventstream/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-analytics/8.4.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="1c9f35e952b212c843f7bd2c7eec8e82ad95602e">
+        <dex dex="/Users/RekMor/Desktop/rek/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/classes-cc863164bd9a1de5713be82e7a4759d8ff8132f1.jar" />
+    </item>
+    <item
+        jar="/Users/RekMor/Desktop/rek/EventStream/Eventstream/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wallet/8.4.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="f2df436a8f02ce7e4d7d209671fc45f97c470f0e">
+        <dex dex="/Users/RekMor/Desktop/rek/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/classes-86da324652e461b9d511d857c4c6d6607fd5e44f.jar" />
+    </item>
+    <item
+        jar="/Users/RekMor/Desktop/rek/EventStream/Eventstream/app/build/intermediates/exploded-aar/Eventstream/ParseUI-Widget/unspecified/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="c06c29149ea32ae7a051e79edc58b600a15dc0d9">
+        <dex dex="/Users/RekMor/Desktop/rek/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/classes-30ce82099dde13d5ffc6641eb524c9b60f11015e.jar" />
+    </item>
+    <item
+        jar="/Users/RekMor/Desktop/rek/EventStream/Eventstream/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appinvite/8.4.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="9fe026fb4c7fce21bc5142f6e1bdf844f28061ac">
+        <dex dex="/Users/RekMor/Desktop/rek/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/classes-351d1de0744649594c5b765c8c1bfb91eecc41c3.jar" />
+    </item>
+    <item
+        jar="/Users/RekMor/Desktop/rek/EventStream/Eventstream/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/8.4.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="b5e7892fb0708e792e0e933c4c0a0ca0ac7831fb">
+        <dex dex="/Users/RekMor/Desktop/rek/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/classes-71ffa7b4c56e72a450943adb4b38fc2988a7ab53.jar" />
+    </item>
+    <item
+        jar="/Users/RekMor/Desktop/rek/EventStream/Eventstream/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="fef2b3e4b6b1b0e5fe7b69fa137a5fa55a3182ab">
+        <dex dex="/Users/RekMor/Desktop/rek/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/classes-3dc62235674ab7f0604467338257c0a68af71bed.jar" />
+    </item>
+    <item
+        jar="/Users/RekMor/Desktop/rek/EventStream/Eventstream/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-identity/8.4.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="b82b8e847173c28efffcd291b2a0b1ae9ad17fa4">
+        <dex dex="/Users/RekMor/Desktop/rek/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/classes-9877ee43d960183d825aeb1228302213f44cfc66.jar" />
+    </item>
+    <item
+        jar="/Users/RekMor/Desktop/rek/EventStream/Eventstream/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-games/8.4.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="3a364cc6b698d1b3b2d284f64618daaa7fe77ddf">
+        <dex dex="/Users/RekMor/Desktop/rek/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/classes-2e96cae51e52a49de89802fde93e25367340d82d.jar" />
+    </item>
+    <item
+        jar="/Users/RekMor/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.6.0/98476622f10715998eacf9240d6b479f12c66143/okio-1.6.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="98476622f10715998eacf9240d6b479f12c66143">
+        <dex dex="/Users/RekMor/Desktop/rek/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/okio-1.6.0-bf7bd3da97a967a6cb7e20a65f76e5663ea6d637.jar" />
     </item>
 
 </items>

@@ -30,7 +30,4 @@ dependencies {
     compile 'com.android.support:design:23.0.1'
 
     compile 'com.squareup.okhttp:okhttp:2.5.0'
-
-    compile 'com.google.android.gms:play-services-appindexing:8.1.0'
-    compile 'com.google.maps:google-maps-services:0.1.9'
-}
+    compile 'com.google.android.gms:play-services:8.4.0'}

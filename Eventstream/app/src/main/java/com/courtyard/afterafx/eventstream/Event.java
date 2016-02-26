@@ -26,14 +26,6 @@ public class Event extends ParseObject{
         put("eventId", id);
     }
 
-    public boolean isPrivate(){
-        return getBoolean("isPrivate");
-    }
-
-    public void setIsPrivate(boolean b){
-        put("isPrivate", b);
-    }
-
     public void setEventCreator(ParseUser user){
         put("eventCreator", user);
     }
