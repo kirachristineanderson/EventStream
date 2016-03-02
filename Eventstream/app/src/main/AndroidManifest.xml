@@ -71,6 +71,8 @@
             android:name=".CreateEventMap"
             android:label="@string/title_activity_create_event_map" >
         </activity>
+        <activity android:name=".EventPhotoStreamGridView" >
+        </activity>
     </application>
 
 </manifest>

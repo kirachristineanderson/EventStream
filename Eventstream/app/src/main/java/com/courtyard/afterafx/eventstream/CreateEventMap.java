@@ -80,8 +80,18 @@ public class CreateEventMap extends FragmentActivity implements OnMapReadyCallba
                 {
                     address = addressList.get(0); //get the 1 match in slot 0
                     latLng = new LatLng(address.getLatitude(), address.getLongitude());
+
+                    googleMap.addCircle(new CircleOptions()
+                            .center(latLng)
+                            .radius(700)
+                            .strokeColor(Color.BLUE)
+                            .strokeWidth(8)
+                            .fillColor(Color.TRANSPARENT));
+
+
                     googleMap.addMarker(new MarkerOptions().position(latLng).title("Marker")); //put the red marker at location
-                    googleMap.animateCamera(CameraUpdateFactory.newLatLng(latLng)); //move the camera there
+                    //googleMap.animateCamera(CameraUpdateFactory.newLatLng(latLng)); //move the camera there
+                    googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng,14));
                     acceptButton.setEnabled(true);//can now accept result
                 }
                 else{
@@ -115,16 +125,9 @@ public class CreateEventMap extends FragmentActivity implements OnMapReadyCallba
     public void onMapReady(GoogleMap map) {
         googleMap = map;
 
-//put a circle around location
-//        CircleOptions circleOptions = new CircleOptions()
-//                .center(latLng)
-//                .strokeColor(Color.BLACK)
-//                .strokeWidth(1)
-//                .fillColor(Color.CYAN)
-//                .radius(100); // In meters
-//
-//
-//        Circle circle = googleMap.addCircle(circleOptions);
+
+        googleMap.setMapType(GoogleMap.MAP_TYPE_TERRAIN);
+
 
         try {
             googleMap.setMyLocationEnabled(true);
