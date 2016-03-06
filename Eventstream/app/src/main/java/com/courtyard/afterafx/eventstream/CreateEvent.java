@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.content.Context;
 
@@ -29,6 +30,7 @@ public class CreateEvent extends AppCompatActivity {
     private EditText eventLocationEditText;
     private EditText eventStartEditText;
     private EditText eventEndEditText;
+    private CheckBox eventIsPrivate;
 
     private double lat;
     private double lng;
@@ -44,6 +46,7 @@ public class CreateEvent extends AppCompatActivity {
         eventLocationEditText = (EditText) findViewById(R.id.locateBox);
         eventStartEditText = (EditText) findViewById(R.id.startBox);
         eventEndEditText = (EditText) findViewById(R.id.endBox);
+        eventIsPrivate = (CheckBox) findViewById(R.id.privateBox);
 
         Button submitButton = (Button) findViewById(R.id.eventSubmit);
         submitButton.setOnClickListener(
@@ -84,7 +87,7 @@ public class CreateEvent extends AppCompatActivity {
         String eventLocation = eventLocationEditText.getText().toString().trim();
         String startDate = eventStartEditText.getText().toString().trim();
         String endDate = eventEndEditText.getText().toString().trim();
-
+        boolean isPrivate = eventIsPrivate.isChecked();
 
         Event parseEvent = new Event();//Creates an event object and connects to the event table in database
         int eventId = (int) (Math.random() * 100000000);//generate random eventId for now
@@ -94,6 +97,7 @@ public class CreateEvent extends AppCompatActivity {
         parseEvent.setDescription(eventDescription);
         parseEvent.setEventId(eventId);
         parseEvent.setEventCreator(ParseUser.getCurrentUser());
+        parseEvent.setIsPrivate(isPrivate);
 
 //        lat = getIntent().getDoubleExtra("lat", 0.0);
 //        lng = getIntent().getDoubleExtra("lng", 0.0);

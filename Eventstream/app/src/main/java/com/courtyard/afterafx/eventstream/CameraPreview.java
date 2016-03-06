@@ -29,6 +29,10 @@ public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback
 
     }
 
+    public void setCamera(Camera c){
+        this.mCamera = c;
+    }
+
     /**--------------------------------------------------------*/
 
     public void surfaceChanged(SurfaceHolder holder, int format, int width,

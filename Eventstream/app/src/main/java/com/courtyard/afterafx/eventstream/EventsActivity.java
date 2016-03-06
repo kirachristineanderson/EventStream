@@ -39,23 +39,27 @@ public class EventsActivity extends ListActivity {
 
 
         getListView().setClickable(true);
-//        getListView().setOnItemClickListener(
-//                new AdapterView.OnItemClickListener() {
-//                    public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
-//                        // your code is here on item click
-//                        Object object = getListView().getItemAtPosition(position);
-//                        Event event = (Event) object;
-//                        String eventName = event.getName();
-//                        String eventDescription = event.getDescription();
-//                        int eventId = event.getEventId();
-//                        Intent intent = new Intent(EventsActivity.this, JoinActivity.class);
-//                        intent.putExtra("Name", eventName);
-//                        intent.putExtra("Description", eventDescription);
-//                        intent.putExtra("EventID", eventId);
-//                        startActivity(intent);
-//                    }
-//                });
-//
+        getListView().setOnItemClickListener(
+                new AdapterView.OnItemClickListener() {
+                    public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+                        // your code is here on item click
+                        Object object = getListView().getItemAtPosition(position);
+                        Event event = (Event) object;
+                        String eventName = event.getName();
+                        String eventDescription = event.getDescription();
+                        int eventId = event.getEventId();
+                        boolean isPrivate = event.isPrivate();
+
+                        Intent intent = new Intent(EventsActivity.this, JoinActivity.class);
+                        intent.putExtra("Name", eventName);
+                        intent.putExtra("Description", eventDescription);
+                        intent.putExtra("EventID", eventId);
+                        intent.putExtra("Private", isPrivate);
+
+                        startActivity(intent);
+                    }
+                });
+
   }
 
 
