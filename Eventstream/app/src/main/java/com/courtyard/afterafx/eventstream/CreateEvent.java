@@ -2,6 +2,7 @@ package com.courtyard.afterafx.eventstream;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.location.Address;
 import android.location.Geocoder;
 import android.support.v7.app.AppCompatActivity;
@@ -11,6 +12,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.content.Context;
+import android.widget.TextView;
 
 
 import com.parse.ParseException;
@@ -40,6 +42,31 @@ public class CreateEvent extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_event);
+
+        Typeface myTipeFace = Typeface.createFromAsset(getAssets(), "alegreyalight.ttf");
+        Typeface myTipeFace2 = Typeface.createFromAsset(getAssets(), "alegreyam.ttf");
+
+        TextView myTextView = (TextView)findViewById(R.id.textView);
+        myTextView.setTypeface(myTipeFace);
+        TextView myTextView2 = (TextView)findViewById(R.id.textView1);
+        myTextView2.setTypeface(myTipeFace);
+        TextView myTextView3 = (TextView)findViewById(R.id.textView2);
+        myTextView3.setTypeface(myTipeFace);
+        TextView myTextView4 = (TextView)findViewById(R.id.textView3);
+        myTextView4.setTypeface(myTipeFace);
+        TextView myTextView5 = (TextView)findViewById(R.id.textView4);
+        myTextView5.setTypeface(myTipeFace);
+
+        TextView myTextView6 = (TextView)findViewById(R.id.eventBox);
+        myTextView6.setTypeface(myTipeFace2);
+        TextView myTextView7 = (TextView)findViewById(R.id.descriptBox);
+        myTextView7.setTypeface(myTipeFace2);
+        TextView myTextView8 = (TextView)findViewById(R.id.locateBox);
+        myTextView8.setTypeface(myTipeFace2);
+        TextView myTextView9 = (TextView)findViewById(R.id.startBox);
+        myTextView9.setTypeface(myTipeFace2);
+        TextView myTextView10 = (TextView)findViewById(R.id.endBox);
+        myTextView10.setTypeface(myTipeFace2);
 
         eventNameEditText = (EditText) findViewById(R.id.eventBox);
         eventDescriptEditText = (EditText) findViewById(R.id.descriptBox);

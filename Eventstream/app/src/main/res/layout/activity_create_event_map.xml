@@ -4,47 +4,52 @@
     android:layout_height="match_parent"
     android:layout_width="match_parent"
     android:orientation="vertical"
-    android:background="#9575cd">
+    android:background="#9575cd"
+    android:weightSum="1">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:background="#9575cd">
+        android:background="#9575cd"
+        android:weightSum="1">
 
         <Button
             style="?android:attr/buttonStyleSmall"
-            android:layout_width="wrap_content"
+            android:layout_width="74dp"
             android:layout_height="wrap_content"
             android:text="Search"
             android:id="@+id/searchButton"
             android:onClick="onSearch"
-            android:textColor="#000000"
-            android:background="#FAFAFA"
-            android:layout_margin="10dp"
-            android:padding="10dp" />
+            android:textColor="#FFFFFF"
+            android:background="@drawable/button2"
+            android:layout_margin="0dp"
+            android:padding="10dp"
+            android:textAllCaps="false"/>
 
 
         <EditText
-            android:layout_width="fill_parent"
-            android:layout_height="match_parent"
+            android:layout_width="232dp"
+            android:layout_height="36dp"
             android:id="@+id/locationTextField"
             android:hint="Enter Location"
-            android:textColorHint="#FFFFFF"
-            android:textColor="#FFFFFF"
-            android:layout_weight="74.50" />
+            android:gravity="center"
+            android:textColorHint="#535252"
+            android:textColor="#000000"
+            android:background="@drawable/button3" />
 
         <Button
             style="?android:attr/buttonStyleSmall"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Accept"
             android:id="@+id/acceptButton"
             android:onClick="acceptButton"
-            android:textColor="#000000"
-            android:background="#FAFAFA"
-            android:layout_margin="10dp"
-            android:padding="10dp" />
+            android:textColor="#FFFFFF"
+            android:background="@drawable/button2"
+            android:layout_margin="0dp"
+            android:padding="10dp"
+            android:textAllCaps="false" />
     </LinearLayout>
 
 

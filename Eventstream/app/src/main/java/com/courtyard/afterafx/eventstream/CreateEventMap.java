@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
@@ -16,6 +17,7 @@ import android.support.v4.content.ContextCompat;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.courtyard.afterafx.eventstream.CreateEvent;
@@ -57,6 +59,15 @@ public class CreateEventMap extends FragmentActivity implements OnMapReadyCallba
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_event_map);
+        Typeface myTipeFace = Typeface.createFromAsset(getAssets(), "alegreyalight.ttf");
+        Typeface myTipeFace2 = Typeface.createFromAsset(getAssets(), "alegreyam.ttf");
+        TextView myTextView = (TextView)findViewById(R.id.locationTextField);
+        myTextView.setTypeface(myTipeFace);
+        TextView myTextView2 = (TextView)findViewById(R.id.searchButton);
+        myTextView2.setTypeface(myTipeFace2);
+        TextView myTextView3 = (TextView)findViewById(R.id.acceptButton);
+        myTextView3.setTypeface(myTipeFace2);
+
 
         acceptButton = (Button) findViewById(R.id.acceptButton);
         acceptButton.setEnabled(false); //can't accept before results available

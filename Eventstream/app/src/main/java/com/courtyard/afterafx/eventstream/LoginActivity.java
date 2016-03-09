@@ -5,6 +5,7 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
@@ -36,6 +37,13 @@ public class LoginActivity extends Activity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_login);
+
+        Typeface myTipeFace = Typeface.createFromAsset(getAssets(), "alegreyalight.ttf");
+
+        TextView myTextView = (TextView)findViewById(R.id.username);
+        myTextView.setTypeface(myTipeFace);
+        TextView myTextView2 = (TextView)findViewById(R.id.password);
+        myTextView2.setTypeface(myTipeFace);
 
         sharedPreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
 
