@@ -21,6 +21,14 @@ public class PhotoParse extends ParseObject {
         //default constructor
     }
 
+    public void setEventId(int id){
+        put("eventId", id);
+    }
+
+    public int getEventId(){
+        return getInt("eventId");
+    }
+
     public ParseFile getImage(){
         return getParseFile("image");
     }

@@ -84,6 +84,9 @@ public class CameraFragment extends Fragment {
                 //Add the thumbnail
                 //photoParse.setThumbnail(mainActivity.getThumbnailFile());
 
+                //******hardcode the eventID for testing purposes
+                photoParse.setEventId(12345);
+
                 //Save the picture and return
                 photoParse.saveInBackground(new SaveCallback() {
 
