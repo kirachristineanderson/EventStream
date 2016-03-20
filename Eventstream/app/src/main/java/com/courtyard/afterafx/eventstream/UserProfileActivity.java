@@ -58,14 +58,13 @@ public class UserProfileActivity extends AppCompatActivity {//did extend ListAct
     //list of corresponding event ids
     List<Integer> listOfEventIds = new ArrayList<Integer>();
 
+    //USING THIS
     //I dont think i need a list of bitmaps i think individual ones are needed to create more instances of this object
     Bitmap listviewBitmap;
+    int eventId;
+    List<UserProfileActivity> arrayOfUserProfileActivities = new ArrayList<UserProfileActivity>();
 
-    //Strings to send over for listview
-    String[] captions = {"Snowboarding trip",
-            "Disneyland Trip", "Dodgers Game"};
-
-    //made this global so simpleeventimagedisplay can access it
+    //made this global so EventImageDisplayListView can access it
     ListAdapter imageAdapter;
 
     @Override
@@ -82,7 +81,7 @@ public class UserProfileActivity extends AppCompatActivity {//did extend ListAct
         imageListView(); //implements and sets the list view
 
         //Populate the listOfPictures array
-        SimpleEventImageDisplay();
+        EventImageDisplayListView();
 
 
 
@@ -94,16 +93,9 @@ public class UserProfileActivity extends AppCompatActivity {//did extend ListAct
     }
 
 
-//    public UserProfileActivity() {
-//
-//    }
-
     public void imageListView() {
 
-        int[] pictures = {R.drawable.bigbear8, R.drawable.disneyland, R.drawable.dodgers};
-
-        //ArrayList<UserProfileActivity> arrayOfUserProfileActivities = new ArrayList<UserProfileActivity>();
-        imageAdapter = new ProfileListCustomAdapter(UserProfileActivity.this, listOfPictures);
+        imageAdapter = new ProfileListCustomAdapter(UserProfileActivity.this, arrayOfUserProfileActivities);
         profile_list_view.setAdapter(imageAdapter);
 
         profile_list_view.setClickable(true);
@@ -120,7 +112,7 @@ public class UserProfileActivity extends AppCompatActivity {//did extend ListAct
     }
 
     //Get the Event Images from parse and put them in the listOfPictures array to send to ProfileListCustomAdapter
-    public void SimpleEventImageDisplay(){
+    public void EventImageDisplayListView(){
         ParseQuery<ParseObject> query = ParseQuery.getQuery("ProfilePhoto");
         query.whereEqualTo("ImageName", "profilePicture");
         query.findInBackground(new FindCallback<ParseObject>() {
@@ -147,16 +139,26 @@ public class UserProfileActivity extends AppCompatActivity {//did extend ListAct
                                     //Toast.makeText(getContext(), "Got Inside Try", Toast.LENGTH_SHORT).show();
                                     data = profilePhotoFile.getData();
                                     bMap = BitmapFactory.decodeByteArray(data, 0, data.length);
-                                    Log.w("bMap #: " + i + ": ", bMap.toString());
+                                    //Log.w("bMap #: " + i + ": ", bMap.toString());
 
-                                    listOfPictures.add(bMap);
+                                   // listOfPictures.add(bMap);
+
+                                    //create list of UserprofileActivity objects containing eventid and bitmap
+                                    UserProfileActivity userProfileActivity = new UserProfileActivity();
+                                    userProfileActivity.setEventId(EventId);
+                                    userProfileActivity.setListviewBitmap(bMap);
+                                    //Log.w("geteventid" + i + ": ", " " + userProfileActivity.getEventId());
+                                    //Log.w("getlistviewbitmap: " + i + ": ", " " + userProfileActivity.getListviewBitmap());
+                                    arrayOfUserProfileActivities.add(userProfileActivity);
+                                    //Log.w("arrayofuserprofileac" + i + ": ", " " + arrayOfUserProfileActivities.get(i));
+
 
                                     //only add the event id if there is one in the future there should always be one but now there isnt
-                                    if(EventId >0){
-
-                                        listOfEventIds.add(EventId);
-                                        Log.d("List of event ids: ", "value: " +EventId);
-                                    }
+//                                    if(EventId >0){
+//
+//                                        listOfEventIds.add(EventId);
+//
+//                                    }
 
 
                                     //setListviewBitmap(bMap);
@@ -303,20 +305,12 @@ public class UserProfileActivity extends AppCompatActivity {//did extend ListAct
 //    }
     }
 
-    public String[] getCaptions() {
-        return captions;
+    public int getEventId() {
+        return eventId;
     }
 
-    public void setCaptions(String[] captions) {
-        this.captions = captions;
-    }
-
-    public List<Bitmap> getListOfPictures() {
-        return listOfPictures;
-    }
-
-    public void setListOfPictures(List<Bitmap> listOfPictures) {
-        this.listOfPictures = listOfPictures;
+    public void setEventId(int eventId) {
+        this.eventId = eventId;
     }
 
     public Bitmap getListviewBitmap() {
@@ -326,6 +320,7 @@ public class UserProfileActivity extends AppCompatActivity {//did extend ListAct
     public void setListviewBitmap(Bitmap listviewBitmap) {
         this.listviewBitmap = listviewBitmap;
     }
+
 
 
 }
