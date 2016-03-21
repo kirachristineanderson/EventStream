@@ -2,263 +2,263 @@
 <items version="2" >
 
     <item
-        jar="/Users/afterafx/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.6.0/98476622f10715998eacf9240d6b479f12c66143/okio-1.6.0.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="98476622f10715998eacf9240d6b479f12c66143">
-        <dex dex="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/okio-1.6.0-ec65cab81f9493411e060ddf2691128496e21ece.jar" />
-    </item>
-    <item
-        jar="/Users/afterafx/.gradle/caches/modules-2/files-2.1/com.parse/parse-android/1.10.1/a87cb993a12e574a216213d0b8b2b78f6da35d37/parse-android-1.10.1.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="a87cb993a12e574a216213d0b8b2b78f6da35d37">
-        <dex dex="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/parse-android-1.10.1-a615939c108d507d37288d42f427162ed91c5ee0.jar" />
-    </item>
-    <item
-        jar="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/23.0.0/jars/libs/internal_impl-23.0.0.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="03d38bb042efe3e5ce27ba66b729a9523c36d8fe">
-        <dex dex="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/internal_impl-23.0.0-50f3f1385d8f795ba6a004d43cb045cca752676b.jar" />
-    </item>
-    <item
-        jar="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wearable/8.4.0/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="e167a34eaca0b31704212f43f9576ea84e05046f">
-        <dex dex="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/classes-18b6e5b9cbb32470f49d738c0b4f0f3e6360d3ea.jar" />
-    </item>
-    <item
-        jar="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/8.4.0/jars/classes.jar"
+        jar="C:\Users\Kira\Documents\Project\EventStream\Eventstream\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-location\8.4.0\jars\classes.jar"
         jumboMode="false"
         revision="23.0.1"
         sha1="a8412b654dab86d57bf90683367488211c8a81f1">
-        <dex dex="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/classes-12fd6060e562f6514e784ece07dcb0c8150a418f.jar" />
+        <dex dex="C:\Users\Kira\Documents\Project\EventStream\Eventstream\app\build\intermediates\pre-dexed\debug\classes-f2db4a002ca93b45199bd74d83f02e2d177c54ab.jar" />
     </item>
     <item
-        jar="/Users/afterafx/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-applinks/1.4.0/8ad21bf21784dacce5f2043afb97218cc377e835/bolts-applinks-1.4.0.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="8ad21bf21784dacce5f2043afb97218cc377e835">
-        <dex dex="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/bolts-applinks-1.4.0-7c584a1e519f84fc7fff19d039b240c17a00a3d4.jar" />
-    </item>
-    <item
-        jar="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-auth/8.4.0/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="966e5771a5a2ebfb31bf00d7cd6cd2546d245517">
-        <dex dex="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/classes-088407ca3b643433ca879eda5809dbe0c2c32258.jar" />
-    </item>
-    <item
-        jar="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="fef2b3e4b6b1b0e5fe7b69fa137a5fa55a3182ab">
-        <dex dex="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/classes-c945fc5e7187112e9f19e2ea5deb063c5c4d9f32.jar" />
-    </item>
-    <item
-        jar="/Users/afterafx/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-tasks/1.4.0/d85884acf6810a3bbbecb587f239005cbc846dc4/bolts-tasks-1.4.0.jar"
+        jar="C:\Users\Kira\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-tasks\1.4.0\d85884acf6810a3bbbecb587f239005cbc846dc4\bolts-tasks-1.4.0.jar"
         jumboMode="false"
         revision="23.0.1"
         sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
-        <dex dex="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/bolts-tasks-1.4.0-176361be7dbdb4db1f9244e2b024acb7c83072da.jar" />
+        <dex dex="C:\Users\Kira\Documents\Project\EventStream\Eventstream\app\build\intermediates\pre-dexed\debug\bolts-tasks-1.4.0-16093ccf115bb2833a22ebed5b158884511b50f2.jar" />
     </item>
     <item
-        jar="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="c31e21b53ff2f74664e498248d01453a32e32d48">
-        <dex dex="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/classes-2fd1d89132ab2b7463968f5c10274c770382fb6e.jar" />
-    </item>
-    <item
-        jar="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-measurement/8.4.0/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="613298b7aa012f121ce542881c0a599ebd8078f2">
-        <dex dex="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/classes-526a67124ad610000f9703e44392f1aba405eeb4.jar" />
-    </item>
-    <item
-        jar="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-plus/8.4.0/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="1a78298e7724d5440d210bcb946b3493250d354d">
-        <dex dex="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/classes-a296add94b555ab8eeadcdab610081b96e9ab105.jar" />
-    </item>
-    <item
-        jar="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/exploded-aar/Eventstream/ParseUI-Login/unspecified/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="169e9ce12518321f6865eecbaba9a22a47d71293">
-        <dex dex="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/classes-c33bffad60c69497281460aee50c3d8fc0c50a30.jar" />
-    </item>
-    <item
-        jar="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-identity/8.4.0/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="b82b8e847173c28efffcd291b2a0b1ae9ad17fa4">
-        <dex dex="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/classes-73992b0017fe081cccc4914b0a644186ee10886d.jar" />
-    </item>
-    <item
-        jar="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.4.0/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="8e673cdfadd8f2d98fdb2fda2285c30f6e449782">
-        <dex dex="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/classes-88b63f3cf30c31799efa14ff92f0f6ac26534fae.jar" />
-    </item>
-    <item
-        jar="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/jars/libs/internal_impl-23.0.1.jar"
+        jar="C:\Users\Kira\Documents\Project\EventStream\Eventstream\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.1\jars\libs\internal_impl-23.0.1.jar"
         jumboMode="false"
         revision="23.0.1"
         sha1="aa92916125166649d8ad4ba3940c3dd7515596d3">
-        <dex dex="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/internal_impl-23.0.1-224d1e929b3c9dc12528f0f58e691cee88044e2f.jar" />
+        <dex dex="C:\Users\Kira\Documents\Project\EventStream\Eventstream\app\build\intermediates\pre-dexed\debug\internal_impl-23.0.1-884341dc25037becbe811046c5ebd87122383181.jar" />
     </item>
     <item
-        jar="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gcm/8.4.0/jars/classes.jar"
+        jar="C:\Users\Kira\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-applinks\1.4.0\8ad21bf21784dacce5f2043afb97218cc377e835\bolts-applinks-1.4.0.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="2d7fe76982677315c4dc4edfb459c8ca718a9d4c">
-        <dex dex="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/classes-f19e3f29b60f2484cbc67bd150967a5547fcb308.jar" />
+        sha1="8ad21bf21784dacce5f2043afb97218cc377e835">
+        <dex dex="C:\Users\Kira\Documents\Project\EventStream\Eventstream\app\build\intermediates\pre-dexed\debug\bolts-applinks-1.4.0-24c5990c4b88ef788b496205f8e23c5539448012.jar" />
     </item>
     <item
-        jar="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-drive/8.4.0/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="b36f30ac5ee5d5214f4b1e2ac49f11889d58e71a">
-        <dex dex="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/classes-0f8d09a088d8ddb5d211bb9d18c6d69cdf5616f0.jar" />
-    </item>
-    <item
-        jar="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-vision/8.4.0/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="dfecc4d835cdabcdecf7e95f0d20a3ef1e9d8ef4">
-        <dex dex="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/classes-2f2472390ce8b10995aae4b6375cb3aeaec151fe.jar" />
-    </item>
-    <item
-        jar="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/23.0.0/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="d358b3dd49a7c67844622dcbc9cf4339e13952ce">
-        <dex dex="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/classes-90895922dc558939666bbd952b13041d5edef615.jar" />
-    </item>
-    <item
-        jar="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-panorama/8.4.0/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="08d34b2d135c1cc96ab506fd8bf6916d1e2f391a">
-        <dex dex="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/classes-d4ab7b4faa313dd478a75ede900ac6dc3384fabe.jar" />
-    </item>
-    <item
-        jar="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast/8.4.0/jars/classes.jar"
+        jar="C:\Users\Kira\Documents\Project\EventStream\Eventstream\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-cast\8.4.0\jars\classes.jar"
         jumboMode="false"
         revision="23.0.1"
         sha1="551e78f21acf69ebfb489c0e79647824c838013e">
-        <dex dex="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/classes-9cd47ea0c61a1cf79f43c40cf70d157936740f54.jar" />
+        <dex dex="C:\Users\Kira\Documents\Project\EventStream\Eventstream\app\build\intermediates\pre-dexed\debug\classes-f9c7e05297b8dcfea1d68264e0710cc71eacfb99.jar" />
     </item>
     <item
-        jar="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="d86429b0f0b3f3cafbeb78dda1b9d89119ccb05d">
-        <dex dex="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/classes-8ed2f81a95d7274905a72d91656c3d905ed247ef.jar" />
-    </item>
-    <item
-        jar="/Users/afterafx/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.0.1/support-annotations-23.0.1.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="1fce89a6428c51467090d7f424e4c9c3dbd55f7e">
-        <dex dex="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/support-annotations-23.0.1-4ba9797dc32413b8233a0c9d9b6173c8d047b721.jar" />
-    </item>
-    <item
-        jar="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/8.4.0/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="04de44f90606c77f3b28cf44861f306290505aac">
-        <dex dex="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/classes-bb8c49de425b885c04e2a38145d0e2f89ed744fd.jar" />
-    </item>
-    <item
-        jar="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-analytics/8.4.0/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="1c9f35e952b212c843f7bd2c7eec8e82ad95602e">
-        <dex dex="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/classes-028503a3c57937ac3bfc86cd004de37da239ea6f.jar" />
-    </item>
-    <item
-        jar="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/exploded-aar/Eventstream/ParseUI-Widget/unspecified/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="cd890ca6669d40128d0082ce013fad0b50b2ed69">
-        <dex dex="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/classes-91c25bf3d20f3cc7a3fd48cc8605026f931adabc.jar" />
-    </item>
-    <item
-        jar="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wallet/8.4.0/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="f2df436a8f02ce7e4d7d209671fc45f97c470f0e">
-        <dex dex="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/classes-e2613042e77d494a5897fd3fa54d582d7e0331bf.jar" />
-    </item>
-    <item
-        jar="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-safetynet/8.4.0/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="0194a7409c40de94fb539d4ad9928ec5d47afeb7">
-        <dex dex="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/classes-6703d4486dcfa145d51329ae48c537f9a4e4add5.jar" />
-    </item>
-    <item
-        jar="/Users/afterafx/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp/okhttp/2.5.0/4de2b4ed3445c37ec1720a7d214712e845a24636/okhttp-2.5.0.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="4de2b4ed3445c37ec1720a7d214712e845a24636">
-        <dex dex="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/okhttp-2.5.0-cffe092647798a2353921423cbd7bb5fd0b7c0ee.jar" />
-    </item>
-    <item
-        jar="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-fitness/8.4.0/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="c54246475c1bb64ac6857d1320364bfbfeda2c46">
-        <dex dex="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/classes-bf793dc5bfa2107c49f2db5ea47dd28648acb078.jar" />
-    </item>
-    <item
-        jar="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/8.4.0/jars/classes.jar"
+        jar="C:\Users\Kira\Documents\Project\EventStream\Eventstream\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads\8.4.0\jars\classes.jar"
         jumboMode="false"
         revision="23.0.1"
         sha1="b5e7892fb0708e792e0e933c4c0a0ca0ac7831fb">
-        <dex dex="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/classes-3e4412dbec095f0551913cb071fc9ebc5802668b.jar" />
+        <dex dex="C:\Users\Kira\Documents\Project\EventStream\Eventstream\app\build\intermediates\pre-dexed\debug\classes-5a03907297df6a928e11038f178ecfa8b3a776ae.jar" />
     </item>
     <item
-        jar="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/exploded-aar/com.android.support/design/23.0.1/jars/classes.jar"
+        jar="C:\Users\Kira\Documents\Project\EventStream\Eventstream\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-wearable\8.4.0\jars\classes.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="e5c61a3169221a89654ffcaaed47bba51cf071ad">
-        <dex dex="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/classes-7daf82ca53b819b31b716102f800875fce5af60e.jar" />
+        sha1="e167a34eaca0b31704212f43f9576ea84e05046f">
+        <dex dex="C:\Users\Kira\Documents\Project\EventStream\Eventstream\app\build\intermediates\pre-dexed\debug\classes-753a7a9cadc8ecccfc7e0d87c760d9b517f47e5e.jar" />
     </item>
     <item
-        jar="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appindexing/8.4.0/jars/classes.jar"
+        jar="C:\Users\Kira\Documents\Project\EventStream\Eventstream\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-panorama\8.4.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="08d34b2d135c1cc96ab506fd8bf6916d1e2f391a">
+        <dex dex="C:\Users\Kira\Documents\Project\EventStream\Eventstream\app\build\intermediates\pre-dexed\debug\classes-39fa3d8c7984c20a8a5e73d1b0ce5127b85b92be.jar" />
+    </item>
+    <item
+        jar="C:\Users\Kira\Documents\Project\EventStream\Eventstream\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-vision\8.4.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="dfecc4d835cdabcdecf7e95f0d20a3ef1e9d8ef4">
+        <dex dex="C:\Users\Kira\Documents\Project\EventStream\Eventstream\app\build\intermediates\pre-dexed\debug\classes-b4272a1ee3ad48405d5d4a131dd26d0e64b227dd.jar" />
+    </item>
+    <item
+        jar="C:\Users\Kira\Documents\Project\EventStream\Eventstream\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-gcm\8.4.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="2d7fe76982677315c4dc4edfb459c8ca718a9d4c">
+        <dex dex="C:\Users\Kira\Documents\Project\EventStream\Eventstream\app\build\intermediates\pre-dexed\debug\classes-ee02181db598c1eaaa059c14c549609ce3c6aeec.jar" />
+    </item>
+    <item
+        jar="C:\Users\Kira\Documents\Project\EventStream\Eventstream\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-maps\8.4.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="04de44f90606c77f3b28cf44861f306290505aac">
+        <dex dex="C:\Users\Kira\Documents\Project\EventStream\Eventstream\app\build\intermediates\pre-dexed\debug\classes-2ead4f92c4fe8e164165c654a026a6b7a71604e3.jar" />
+    </item>
+    <item
+        jar="C:\Users\Kira\Documents\Project\EventStream\Eventstream\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-drive\8.4.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="b36f30ac5ee5d5214f4b1e2ac49f11889d58e71a">
+        <dex dex="C:\Users\Kira\Documents\Project\EventStream\Eventstream\app\build\intermediates\pre-dexed\debug\classes-d3f8f15f7b39a09966bcf4eca49d51fb2a53a2d8.jar" />
+    </item>
+    <item
+        jar="C:\Users\Kira\Documents\Project\EventStream\Eventstream\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appindexing\8.4.0\jars\classes.jar"
         jumboMode="false"
         revision="23.0.1"
         sha1="65d086ee9daaf87b5af62ad24471edafa433354c">
-        <dex dex="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/classes-756ba51e82541b5e9e814ee51a0b7223c97a8326.jar" />
+        <dex dex="C:\Users\Kira\Documents\Project\EventStream\Eventstream\app\build\intermediates\pre-dexed\debug\classes-ac8eab14420a5025506b13444f8f62224b9ca305.jar" />
     </item>
     <item
-        jar="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appinvite/8.4.0/jars/classes.jar"
+        jar="C:\Users\Kira\Documents\Project\EventStream\Eventstream\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-identity\8.4.0\jars\classes.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="9fe026fb4c7fce21bc5142f6e1bdf844f28061ac">
-        <dex dex="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/classes-908ef1a99079f7adce627c7db9feb140a3f282f1.jar" />
+        sha1="b82b8e847173c28efffcd291b2a0b1ae9ad17fa4">
+        <dex dex="C:\Users\Kira\Documents\Project\EventStream\Eventstream\app\build\intermediates\pre-dexed\debug\classes-f674f04e16f287033a2976eba348d8ce1ccccf3d.jar" />
     </item>
     <item
-        jar="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-games/8.4.0/jars/classes.jar"
+        jar="C:\Users\Kira\Documents\Project\EventStream\Eventstream\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.4.0\jars\classes.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="3a364cc6b698d1b3b2d284f64618daaa7fe77ddf">
-        <dex dex="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/classes-718065d28bf8d1ea28bd18f053e32af303eef085.jar" />
+        sha1="8e673cdfadd8f2d98fdb2fda2285c30f6e449782">
+        <dex dex="C:\Users\Kira\Documents\Project\EventStream\Eventstream\app\build\intermediates\pre-dexed\debug\classes-e8c1c9a812ba38ed2a7bc3ea75a5009d07de76dd.jar" />
     </item>
     <item
-        jar="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-nearby/8.4.0/jars/classes.jar"
+        jar="C:\Users\Kira\Documents\Project\EventStream\Eventstream\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-fitness\8.4.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="c54246475c1bb64ac6857d1320364bfbfeda2c46">
+        <dex dex="C:\Users\Kira\Documents\Project\EventStream\Eventstream\app\build\intermediates\pre-dexed\debug\classes-131fac281ff086b84c7c1ead35ded8a567dbb364.jar" />
+    </item>
+    <item
+        jar="C:\Users\Kira\Documents\Project\EventStream\Eventstream\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\8.4.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="fef2b3e4b6b1b0e5fe7b69fa137a5fa55a3182ab">
+        <dex dex="C:\Users\Kira\Documents\Project\EventStream\Eventstream\app\build\intermediates\pre-dexed\debug\classes-21d16a6f0e0e7297a613357dc92a16dfb03b5e8c.jar" />
+    </item>
+    <item
+        jar="C:\Users\Kira\Documents\Project\EventStream\Eventstream\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-analytics\8.4.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="1c9f35e952b212c843f7bd2c7eec8e82ad95602e">
+        <dex dex="C:\Users\Kira\Documents\Project\EventStream\Eventstream\app\build\intermediates\pre-dexed\debug\classes-5787e213e36a5fe4a4df1c1546de43d1aba90611.jar" />
+    </item>
+    <item
+        jar="C:\Users\Kira\Documents\Project\EventStream\Eventstream\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-auth\8.4.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="966e5771a5a2ebfb31bf00d7cd6cd2546d245517">
+        <dex dex="C:\Users\Kira\Documents\Project\EventStream\Eventstream\app\build\intermediates\pre-dexed\debug\classes-0d3335b26124804922e9e63ac2c24ac4d3841b1c.jar" />
+    </item>
+    <item
+        jar="C:\Users\Kira\Documents\Project\EventStream\Eventstream\app\build\intermediates\exploded-aar\Eventstream\ParseUI-Login\unspecified\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="3bde4d56d03ef27830442a8ba8bce945a6b5f524">
+        <dex dex="C:\Users\Kira\Documents\Project\EventStream\Eventstream\app\build\intermediates\pre-dexed\debug\classes-4f6aa3eabdd5304ea4541eb1754922d298cf73c8.jar" />
+    </item>
+    <item
+        jar="C:\Users\Kira\Documents\Project\EventStream\Eventstream\app\build\intermediates\exploded-aar\com.android.support\design\23.0.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="e5c61a3169221a89654ffcaaed47bba51cf071ad">
+        <dex dex="C:\Users\Kira\Documents\Project\EventStream\Eventstream\app\build\intermediates\pre-dexed\debug\classes-5875935a0beb0b8438a391d879101f443db17f60.jar" />
+    </item>
+    <item
+        jar="C:\Users\Kira\Documents\Project\EventStream\Eventstream\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-measurement\8.4.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="613298b7aa012f121ce542881c0a599ebd8078f2">
+        <dex dex="C:\Users\Kira\Documents\Project\EventStream\Eventstream\app\build\intermediates\pre-dexed\debug\classes-de8f1587681ad6411eee4a41d6682e0b42145675.jar" />
+    </item>
+    <item
+        jar="C:\Users\Kira\Documents\Project\EventStream\Eventstream\app\build\intermediates\exploded-aar\com.android.support\mediarouter-v7\23.0.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="d358b3dd49a7c67844622dcbc9cf4339e13952ce">
+        <dex dex="C:\Users\Kira\Documents\Project\EventStream\Eventstream\app\build\intermediates\pre-dexed\debug\classes-fe920bb48690f26259eac4ec8c060ded76dd6500.jar" />
+    </item>
+    <item
+        jar="C:\Users\Kira\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp\okhttp\2.5.0\4de2b4ed3445c37ec1720a7d214712e845a24636\okhttp-2.5.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="4de2b4ed3445c37ec1720a7d214712e845a24636">
+        <dex dex="C:\Users\Kira\Documents\Project\EventStream\Eventstream\app\build\intermediates\pre-dexed\debug\okhttp-2.5.0-4426bbe3ff22e7cd0732c4cdb921b98e9cc6d45a.jar" />
+    </item>
+    <item
+        jar="C:\Users\Kira\Documents\Project\EventStream\Eventstream\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-wallet\8.4.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="f2df436a8f02ce7e4d7d209671fc45f97c470f0e">
+        <dex dex="C:\Users\Kira\Documents\Project\EventStream\Eventstream\app\build\intermediates\pre-dexed\debug\classes-66c16187e4bbdf2075cd65021e2639dfb666b3f8.jar" />
+    </item>
+    <item
+        jar="C:\Users\Kira\Documents\Project\EventStream\Eventstream\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="c31e21b53ff2f74664e498248d01453a32e32d48">
+        <dex dex="C:\Users\Kira\Documents\Project\EventStream\Eventstream\app\build\intermediates\pre-dexed\debug\classes-c54e745360afa24cab7f636b5370c98140089e5b.jar" />
+    </item>
+    <item
+        jar="C:\Users\Kira\Documents\Project\EventStream\Eventstream\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-nearby\8.4.0\jars\classes.jar"
         jumboMode="false"
         revision="23.0.1"
         sha1="9cad249cf62751a323d9af568caf12284b7d6062">
-        <dex dex="/Users/afterafx/Desktop/Project/EventStream/Eventstream/app/build/intermediates/pre-dexed/debug/classes-131a207a2aef8ed5ccdb2a684512fd3b30035999.jar" />
+        <dex dex="C:\Users\Kira\Documents\Project\EventStream\Eventstream\app\build\intermediates\pre-dexed\debug\classes-92dd24d7b069533e296b29120121f9b693462c8d.jar" />
+    </item>
+    <item
+        jar="C:\Users\Kira\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.6.0\98476622f10715998eacf9240d6b479f12c66143\okio-1.6.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="98476622f10715998eacf9240d6b479f12c66143">
+        <dex dex="C:\Users\Kira\Documents\Project\EventStream\Eventstream\app\build\intermediates\pre-dexed\debug\okio-1.6.0-ef1793ea97006d10d846355493e65834c44cc134.jar" />
+    </item>
+    <item
+        jar="C:\Users\Kira\Documents\Project\EventStream\Eventstream\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.0.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="d86429b0f0b3f3cafbeb78dda1b9d89119ccb05d">
+        <dex dex="C:\Users\Kira\Documents\Project\EventStream\Eventstream\app\build\intermediates\pre-dexed\debug\classes-064b0db2bac4d8f5f03ae7d2c57e30966d733d3a.jar" />
+    </item>
+    <item
+        jar="C:\Users\Kira\Documents\Project\EventStream\Eventstream\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-games\8.4.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="3a364cc6b698d1b3b2d284f64618daaa7fe77ddf">
+        <dex dex="C:\Users\Kira\Documents\Project\EventStream\Eventstream\app\build\intermediates\pre-dexed\debug\classes-29d973ea859052d91a0185e41c5956b36f18dc7c.jar" />
+    </item>
+    <item
+        jar="C:\Users\Kira\Documents\Project\EventStream\Eventstream\app\build\intermediates\exploded-aar\Eventstream\ParseUI-Widget\unspecified\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="474a5c786715d0c7fd3a491a0156347a462bd833">
+        <dex dex="C:\Users\Kira\Documents\Project\EventStream\Eventstream\app\build\intermediates\pre-dexed\debug\classes-ca265fc4efdf39001866dcfe810f9b763b7807f1.jar" />
+    </item>
+    <item
+        jar="C:\Users\Kira\.gradle\caches\modules-2\files-2.1\com.parse\parse-android\1.10.1\a87cb993a12e574a216213d0b8b2b78f6da35d37\parse-android-1.10.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="a87cb993a12e574a216213d0b8b2b78f6da35d37">
+        <dex dex="C:\Users\Kira\Documents\Project\EventStream\Eventstream\app\build\intermediates\pre-dexed\debug\parse-android-1.10.1-afcc7e167b3ef572944b82c2c69b2a36202e0736.jar" />
+    </item>
+    <item
+        jar="C:\Users\Kira\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.0.1\support-annotations-23.0.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="1fce89a6428c51467090d7f424e4c9c3dbd55f7e">
+        <dex dex="C:\Users\Kira\Documents\Project\EventStream\Eventstream\app\build\intermediates\pre-dexed\debug\support-annotations-23.0.1-fa7accc625219a5782bf21d52804d74d59ca7c83.jar" />
+    </item>
+    <item
+        jar="C:\Users\Kira\Documents\Project\EventStream\Eventstream\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-plus\8.4.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="1a78298e7724d5440d210bcb946b3493250d354d">
+        <dex dex="C:\Users\Kira\Documents\Project\EventStream\Eventstream\app\build\intermediates\pre-dexed\debug\classes-55dadcf74955ec5bf77eec5bb25ec2816abcbdc0.jar" />
+    </item>
+    <item
+        jar="C:\Users\Kira\Documents\Project\EventStream\Eventstream\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-safetynet\8.4.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="0194a7409c40de94fb539d4ad9928ec5d47afeb7">
+        <dex dex="C:\Users\Kira\Documents\Project\EventStream\Eventstream\app\build\intermediates\pre-dexed\debug\classes-b23194262c573d134ab1f208d5b11eaa95c5f1ef.jar" />
+    </item>
+    <item
+        jar="C:\Users\Kira\Documents\Project\EventStream\Eventstream\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appinvite\8.4.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="9fe026fb4c7fce21bc5142f6e1bdf844f28061ac">
+        <dex dex="C:\Users\Kira\Documents\Project\EventStream\Eventstream\app\build\intermediates\pre-dexed\debug\classes-fcaf89d1289945d7814e2a5f2400e5364cffd8ee.jar" />
+    </item>
+    <item
+        jar="C:\Users\Kira\Documents\Project\EventStream\Eventstream\app\build\intermediates\exploded-aar\com.android.support\mediarouter-v7\23.0.0\jars\libs\internal_impl-23.0.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="03d38bb042efe3e5ce27ba66b729a9523c36d8fe">
+        <dex dex="C:\Users\Kira\Documents\Project\EventStream\Eventstream\app\build\intermediates\pre-dexed\debug\internal_impl-23.0.0-cf81a9ca0c26254e0f2e2662dcc7bd6ff7a7db04.jar" />
     </item>
 
 </items>
