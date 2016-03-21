@@ -5,7 +5,9 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -16,7 +18,11 @@ import com.parse.SaveCallback;
 
 public class JoinActivity extends Activity {
 
+    final String TAG ="JoinedActivity";
+
     final Context context = this;
+    SharedPreferences sharedPreferences;
+    public static final String MyPREFERENCES = "MyPrefs";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,13 +41,16 @@ public class JoinActivity extends Activity {
         TextView description = (TextView) findViewById(R.id.joinEventDescription);
         description.setText(eventDescription);
 
+        sharedPreferences = getSharedPreferences(MyPREFERENCES, 1);
+
         Button joinButton = (Button) findViewById(R.id.joinEventButton);
+        final JoinedEvent joinedEvent = new JoinedEvent();
         joinButton.setOnClickListener(
                 new View.OnClickListener() {
                     public void onClick(View v) {
 
                         if(!isPrivate){
-                            JoinedEvent joinedEvent = new JoinedEvent();
+                            //joinedEvent = new JoinedEvent();
                             joinedEvent.setUser(ParseUser.getCurrentUser());
                             joinedEvent.setEventId(eventID);
                             joinedEvent.setName(eventName);
@@ -77,6 +86,18 @@ public class JoinActivity extends Activity {
                                     .show();
                         }
 
+                    }
+                }
+        );
+
+        Button sendPhotoEvent = (Button) findViewById(R.id.sendPhotoEvent);
+        sendPhotoEvent.setOnClickListener(
+                new View.OnClickListener(){
+                    public void onClick(View v){
+                        Log.i(TAG, "eventID " + eventID);
+                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                        editor.putInt("primaryEventID", eventID);
+                        editor.commit();
                     }
                 }
         );

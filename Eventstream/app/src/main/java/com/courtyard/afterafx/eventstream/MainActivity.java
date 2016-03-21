@@ -143,8 +143,6 @@ public class MainActivity extends Activity {
 
                         /**--------------------------------------------------------*/
 
-                        eventPicker();
-
 
                         //After taking a picture, open the CameraFragment
                         FragmentManager manager = getFragmentManager();
@@ -375,32 +373,5 @@ public class MainActivity extends Activity {
     }
 
     /**---------------------------------------------------*/
-
-    public void eventPicker(){
-        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
-
-        // set title
-        alertDialogBuilder.setTitle("Pick an Event");
-
-        // set dialog message
-        alertDialogBuilder
-                .setMessage("Click yes to exit!")
-                .setCancelable(false)
-                .setNegativeButton("No",new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog,int id) {
-                        // if this button is clicked, just close
-                        // the dialog box and do nothing
-                        dialog.cancel();
-                    }
-                });
-
-        // create alert dialog
-        AlertDialog alertDialog = alertDialogBuilder.create();
-
-        // show it
-        alertDialog.show();
-
-    }
-
-    /**----------------------------------------------------*/
+    
 }

@@ -22,11 +22,11 @@ public class PhotoParse extends ParseObject {
     }
 
     public void setEventId(int id){
-        put("eventId", id);
+        put("eventID", id);
     }
 
     public int getEventId(){
-        return getInt("eventId");
+        return getInt("eventID");
     }
 
     public ParseFile getImage(){

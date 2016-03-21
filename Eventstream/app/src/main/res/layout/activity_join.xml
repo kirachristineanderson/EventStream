@@ -12,7 +12,7 @@
 
     <GridView
         android:layout_width="wrap_content"
-        android:layout_height="440dp"
+        android:layout_height="420dp"
         android:id="@+id/gridView"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
@@ -60,5 +60,14 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Send Photos to this Event"
+        android:id="@+id/sendPhotoEvent"
+        android:layout_below="@+id/joinEventDescription"
+        android:layout_alignRight="@+id/gridView"
+        android:layout_alignEnd="@+id/gridView" />
 
 </RelativeLayout>

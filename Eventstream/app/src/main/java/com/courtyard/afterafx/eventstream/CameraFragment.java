@@ -4,7 +4,9 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Fragment;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -36,12 +38,18 @@ public class CameraFragment extends Fragment {
     private ProgressDialog progressDialog;
     private ParseFile parseFile;
 
+    SharedPreferences sharedPreferences;
+    public static final String MyPREFERENCES = "MyPrefs";
+
 
     /**--------------------------------------------------------------------------*/
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        sharedPreferences = this.getActivity().getSharedPreferences(MyPREFERENCES, 1);
+
     }
 
     /**--------------------------------------------------------------------------*/
@@ -55,6 +63,7 @@ public class CameraFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_camera, container, false);
 
         photoView = (ParseImageView) v.findViewById(R.id.photo_preview);
+
 
         Button saveButton = (Button) v.findViewById(R.id.save_button);
         saveButton.setOnClickListener(new View.OnClickListener() {
@@ -81,13 +90,18 @@ public class CameraFragment extends Fragment {
                 photoParse.setUser(ParseUser.getCurrentUser());
 
                 //Add the image
+                if(parseFile != null)
                 photoParse.setImage(parseFile);
 
                 //Add the thumbnail
                 //photoParse.setThumbnail(mainActivity.getThumbnailFile());
 
                 //******hardcode the eventID for testing purposes
-                photoParse.setEventId(12345);
+                if(sharedPreferences.contains("primaryEventID")) {
+                    int id = sharedPreferences.getInt("primaryEventID", 0);
+                    Log.i(TAG, "eventID" + id);
+                    photoParse.setEventId(id);
+                }
 
                 //Save the picture and return
                 photoParse.saveInBackground(new SaveCallback() {

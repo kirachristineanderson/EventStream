@@ -44,7 +44,8 @@
             android:maxLines="1"
             android:singleLine="true"
             android:textColor="#FFFFFF"
-            android:textColorHint="#FFFFFF" />
+            android:textColorHint="#FFFFFF"
+            android:text="Email" />
 
         <EditText
             android:id="@+id/password_edit_text"
