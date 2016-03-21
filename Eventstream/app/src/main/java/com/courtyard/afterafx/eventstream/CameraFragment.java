@@ -1,8 +1,10 @@
 package com.courtyard.afterafx.eventstream;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.Fragment;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -173,6 +175,9 @@ public class CameraFragment extends Fragment {
         System.out.println("CameraFragment: onDestroy");
         super.onDestroy();
     }
+
+    /**--------------------------------------------------------------------------*/
+
 
 
 

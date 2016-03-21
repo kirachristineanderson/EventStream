@@ -12,10 +12,12 @@ import java.util.Locale;
 
 import android.app.Activity;
 import android.app.ActivityManager;
+import android.app.AlertDialog;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.content.ComponentName;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -122,6 +124,8 @@ public class MainActivity extends Activity {
                             }
                         });
 
+
+
                         /**--------------------------------------------------------*/
                         //After you take a picture hide the buttons.
 
@@ -138,6 +142,8 @@ public class MainActivity extends Activity {
                         k.setVisibility(View.GONE);
 
                         /**--------------------------------------------------------*/
+
+                        eventPicker();
 
 
                         //After taking a picture, open the CameraFragment
@@ -369,4 +375,32 @@ public class MainActivity extends Activity {
     }
 
     /**---------------------------------------------------*/
+
+    public void eventPicker(){
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+
+        // set title
+        alertDialogBuilder.setTitle("Pick an Event");
+
+        // set dialog message
+        alertDialogBuilder
+                .setMessage("Click yes to exit!")
+                .setCancelable(false)
+                .setNegativeButton("No",new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog,int id) {
+                        // if this button is clicked, just close
+                        // the dialog box and do nothing
+                        dialog.cancel();
+                    }
+                });
+
+        // create alert dialog
+        AlertDialog alertDialog = alertDialogBuilder.create();
+
+        // show it
+        alertDialog.show();
+
+    }
+
+    /**----------------------------------------------------*/
 }
