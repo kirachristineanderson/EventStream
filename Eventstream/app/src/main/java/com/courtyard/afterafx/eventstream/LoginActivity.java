@@ -79,8 +79,6 @@ public class LoginActivity extends Activity {
 
     private void login(String username, String password) {
 
-        username = "afterafx";
-        password = "hacker";
 
         if(username == null || password == null){
             username = usernameTextEdit.getText().toString().trim();
