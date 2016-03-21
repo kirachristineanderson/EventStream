@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.support.annotation.DrawableRes;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -61,7 +62,7 @@ public class EventStreamCustomAdapter extends ArrayAdapter<EventPhotoStreamGridV
 
 
         middle_image.setImageBitmap(eventPhotoStreamGridView.getGridViewBitmap()); //set the image on the prof page from object
-
+        Log.w("custoptergettingBMP: ", " " + eventPhotoStreamGridView.getGridViewBitmap());
 
         return customView;
     }
