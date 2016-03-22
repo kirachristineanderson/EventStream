@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.parse.GetCallback;
 import com.parse.GetDataCallback;
@@ -42,6 +43,7 @@ public class EventStreamCustomAdapter extends ArrayAdapter<EventPhotoStreamGridV
 
     public EventStreamCustomAdapter(Context context, List<EventPhotoStreamGridView> eventPhotoStreamGridView) {
         super(context, R.layout.event_photo_stream_custom_row, eventPhotoStreamGridView);
+        Toast.makeText(getContext(), "Number of results: ", Toast.LENGTH_SHORT).show();
     }
 
     public View getView (int position, View convertView, ViewGroup parent){

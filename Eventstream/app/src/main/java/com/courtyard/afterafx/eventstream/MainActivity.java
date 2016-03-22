@@ -271,7 +271,8 @@ public class MainActivity extends Activity {
 
 
     public void setScaledPhoto(byte[] data) {
-        this.scaledPhoto = data;
+        byte [] temp = saveScaledPhoto(data);
+        this.scaledPhoto = temp;
     }
 
     public static byte[] getScaledPhoto() {
