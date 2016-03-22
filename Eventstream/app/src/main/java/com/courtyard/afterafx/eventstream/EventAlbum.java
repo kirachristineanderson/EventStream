@@ -174,7 +174,7 @@ public class EventAlbum extends Activity {
 
                                     //create list of UserprofileActivity objects containing eventid and bitmap
                                     EventAlbum eventAlbum = new EventAlbum();
-                                    //eventAlbum.setEventId(EventId);
+                                    eventAlbum.setEventId(EventId);
                                     eventAlbum.setGridViewBitmap(bMap);
                                     //Log.w("geteventid" + i + ": ", " " + userProfileActivity.getEventId());
                                     //Log.w("eventPhotoStrViews: " + i + ": ", " " + eventPhotoStreamGridViews.getGridViewBitmap());
