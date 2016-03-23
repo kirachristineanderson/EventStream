@@ -581,7 +581,7 @@ public class ParseQueryAdapterTest extends BaseActivityInstrumentationTestCase2<
     adapter.addOnQueryLoadListener(new OnQueryLoadListener<Thing>() {
       @Override
       public void onLoading() {
-      };
+      }
 
       @Override
       public void onLoaded(List<Thing> objects, Exception e) {

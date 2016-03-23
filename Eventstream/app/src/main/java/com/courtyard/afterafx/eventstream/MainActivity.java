@@ -10,22 +10,25 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
+import android.Manifest;
 import android.app.Activity;
 import android.app.ActivityManager;
-import android.app.AlertDialog;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.content.ComponentName;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
 import android.hardware.Camera;
-import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
+import android.support.annotation.NonNull;
+import android.support.design.widget.Snackbar;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -33,34 +36,125 @@ import android.widget.FrameLayout;
 
 import com.parse.ParseFile;
 
-//Happy 2016! New Semester YAY!
-
 
 public class MainActivity extends Activity {
 
-    private Camera mCamera;
-    private CameraPreview mPreview;
+    private static final int MEDIA_TYPE_IMAGE = 1;
+    private static final int REQUEST_CAMERA = 0;
+    private final static String TAG = "MainActivity";
     public static byte[] scaledPhoto;
     public String currentEvent;
+    private Camera mCamera;
+    private CameraPreview mPreview;
     private ParseFile image;
+    private static final int REQUEST_CONTACTS = 0;
+    private static String[] PERMISSIONS_CONTACT = {Manifest.permission.READ_CONTACTS, Manifest.permission.WRITE_CONTACTS};
     private ParseFile thumbnail;
 
-    private static final int MEDIA_TYPE_IMAGE = 1;
 
-    private final static String TAG = "MainActivity";
+    //Returns true if our app is sent to the background. Returns false otherwise.
+    public static boolean isApplicationSentToBackground(final Context context) {
+        ActivityManager am = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
+        List<ActivityManager.RunningTaskInfo> tasks = am.getRunningTasks(1);
+        if (!tasks.isEmpty()) {
+            ComponentName topActivity = tasks.get(0).topActivity;
+            if (!topActivity.getPackageName().equals(context.getPackageName())) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+
+    public static byte[] getScaledPhoto() {
+        return scaledPhoto;
+    }
+
+
+
+    public void setScaledPhoto(byte[] data) {
+        scaledPhoto = saveScaledPhoto(data);
+    }
+
+
+
+
+    public static Camera getCameraInstance() {
+        Camera c = null;
+        try {
+            Log.d(TAG, "Open Camera");
+            c = Camera.open(); // attempt to get a Camera instance
+            Camera.Parameters params = c.getParameters();
+            params.setFocusMode(Camera.Parameters.FOCUS_MODE_CONTINUOUS_PICTURE);
+            c.setParameters(params);
+
+        } catch (Exception e) {
+            Log.i(TAG, "Device doesn't have a Camera");
+        }
+        return c; // returns null if camera is unavailable
+    }
+
+
+
+
+    private static File getOutputMediaFile(int type) {
+        // To be safe, you should check that the SDCard is mounted
+        // using Environment.getExternalStorageState() before doing this.
+
+        Log.i(TAG, "Entering getOutputMediaFile");
+
+        File mediaStorageDir = new File(Environment.getExternalStoragePublicDirectory(
+                Environment.DIRECTORY_PICTURES), "My Eventstream");
+
+        // This location works best if you want the created images to be shared
+        // between applications and persist after your app has been uninstalled.
+
+        // Create the storage directory if it does not exist
+        // Make sure you have permission to write to the SD Card enabled.
+        // in order to do this!!
+        if (!mediaStorageDir.exists()) {
+            if (!mediaStorageDir.mkdirs()) {
+                Log.i(TAG, "getOutputMediaFile failed to create directory");
+                return null;
+            }
+        }
+
+        // Create a media file name
+        String timeStamp;
+        timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss", Locale.ENGLISH).format(new Date());
+        File mediaFile;
+        if (type == MEDIA_TYPE_IMAGE) {
+            mediaFile = new File(mediaStorageDir.getPath() + File.separator +
+                    "IMG_" + timeStamp + ".jpg");
+        } else {
+            return null;
+        }
+
+        return mediaFile;
+    }
+
 
 
     //onCreate
     //Called when the app is opened! Creates and sets variables
-
-    /**
-     * ---------------------------------------------------
-     */
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         //Set the content view to be the activity_main.xml file
         setContentView(R.layout.activity_main);
+
+        //Request Camera Permissions
+        if(ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED){
+            // Do nothing.
+        } else
+        {
+            //Request Camera Permission
+            requestCameraPermission();
+        }
+
+
+       //requestContactsPermissions();
 
 
         //Create the capture button by finding the element with "button_capture" id in the xml
@@ -126,7 +220,6 @@ public class MainActivity extends Activity {
 
 
 
-                        /**--------------------------------------------------------*/
                         //After you take a picture hide the buttons.
 
                         View b = findViewById(R.id.button_capture);
@@ -141,7 +234,6 @@ public class MainActivity extends Activity {
                         View k = findViewById(R.id.button_create);
                         k.setVisibility(View.GONE);
 
-                        /**--------------------------------------------------------*/
 
 
                         //After taking a picture, open the CameraFragment
@@ -154,8 +246,6 @@ public class MainActivity extends Activity {
                             //add id of the FrameLayout to fill, and the fragment that will hold
                             manager.beginTransaction().add(R.id.main_Layout, fragment).commit();
                         }
-
-                        /**--------------------------------------------------------*/
 
 
                     }
@@ -214,11 +304,8 @@ public class MainActivity extends Activity {
 
     }
 
-    //onResume
 
-    /**
-     * ---------------------------------------------------
-     */
+
 
     @Override
     protected void onResume() {
@@ -227,37 +314,20 @@ public class MainActivity extends Activity {
 
         int numCams = Camera.getNumberOfCameras();
         if(numCams > 0){
-            try{
+
+            try {
                 mCamera = Camera.open(0);
                 mCamera.startPreview();
                 mPreview.setCamera(mCamera);
-            }catch(RuntimeException e){
+
+            } catch(RuntimeException e){
 
             }
         }
     }
 
-    /*
-    Returns true if our app is sent to the background. Returns false otherwise.
-     */
-    public static boolean isApplicationSentToBackground(final Context context) {
-        ActivityManager am = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
-        List<ActivityManager.RunningTaskInfo> tasks = am.getRunningTasks(1);
-        if (!tasks.isEmpty()) {
-            ComponentName topActivity = tasks.get(0).topActivity;
-            if (!topActivity.getPackageName().equals(context.getPackageName())) {
-                return true;
-            }
-        }
 
-        return false;
-    }
 
-    // Setters & Getters
-
-    /**
-     * ---------------------------------------------------
-     */
 
 
     public ParseFile getImageFile() {
@@ -265,90 +335,18 @@ public class MainActivity extends Activity {
         return image;
     }
 
+
+
+    //Create a File for saving an image or video. Uses the environment external storage directory.
+    //Creates each file using unique timestamp
+    //Returns the File Object for the new image, or null if there was some error creating the file.
+
     public ParseFile getThumbnailFile() {
         return thumbnail;
     }
 
 
-    public void setScaledPhoto(byte[] data) {
-        byte [] temp = saveScaledPhoto(data);
-        this.scaledPhoto = temp;
-    }
 
-    public static byte[] getScaledPhoto() {
-        return scaledPhoto;
-    }
-
-
-    //Create camera instance, a safe way to get an instance of the Camera object.
-    /**
-     * ---------------------------------------------------
-     */
-
-    public static Camera getCameraInstance() {
-        Camera c = null;
-        try {
-            Log.d(TAG, "Open Camera");
-            c = Camera.open(); // attempt to get a Camera instance
-            Camera.Parameters params = c.getParameters();
-            params.setFocusMode(Camera.Parameters.FOCUS_MODE_CONTINUOUS_PICTURE);
-            c.setParameters(params);
-
-        } catch (Exception e) {
-            Log.i(TAG, "Device doesn't have a Camera");
-        }
-        return c; // returns null if camera is unavailable
-    }
-
-
-    //Create a File for saving an image or video. Uses the environment external storage directory.
-    //Creates each file using unique timestamp
-
-    //Returns the File Object for the new image, or null if there was some error creating the file.
-
-    /**
-     * ---------------------------------------------------
-     */
-
-    private static File getOutputMediaFile(int type) {
-        // To be safe, you should check that the SDCard is mounted
-        // using Environment.getExternalStorageState() before doing this.
-
-        Log.i(TAG, "Entering getOutputMediaFile");
-
-        File mediaStorageDir = new File(Environment.getExternalStoragePublicDirectory(
-                Environment.DIRECTORY_PICTURES), "My Eventstream");
-
-        // This location works best if you want the created images to be shared
-        // between applications and persist after your app has been uninstalled.
-
-        // Create the storage directory if it does not exist
-        // Make sure you have permission to write to the SD Card enabled.
-        // in order to do this!!
-        if (!mediaStorageDir.exists()) {
-            if (!mediaStorageDir.mkdirs()) {
-                Log.i(TAG, "getOutputMediaFile failed to create directory");
-                return null;
-            }
-        }
-
-        // Create a media file name
-        String timeStamp;
-        timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss", Locale.ENGLISH).format(new Date());
-        File mediaFile;
-        if (type == MEDIA_TYPE_IMAGE) {
-            mediaFile = new File(mediaStorageDir.getPath() + File.separator +
-                    "IMG_" + timeStamp + ".jpg");
-        } else {
-            return null;
-        }
-
-        return mediaFile;
-    }
-
-    /**
-     * ---------------------------------------------------
-     */
 
     private byte[] saveScaledPhoto(byte[] data) {
 
@@ -366,13 +364,89 @@ public class MainActivity extends Activity {
         ByteArrayOutputStream bos = new ByteArrayOutputStream();
         rotatedScaledEventImage.compress(Bitmap.CompressFormat.JPEG, 100, bos);
 
-        byte[] scaledData = bos.toByteArray();
-
-        return scaledData;
+        return bos.toByteArray();
 
 
     }
 
-    /**---------------------------------------------------*/
+
+
+
+    private void requestCameraPermission(){
+        Log.i(TAG, "Camera permission has NOT been granted. Requesting permission.");
+
+        if(ActivityCompat.shouldShowRequestPermissionRationale(MainActivity.this, Manifest.permission.CAMERA)){
+
+            //Provide an additional rationale to the user if the permission was not granted
+            //and the user would benefit from additional context for the use of the permission.
+            Log.i(TAG, "Displaying camera permission rationale to provide additional context.");
+            Snackbar.make(mPreview, R.string.permission_rationale, Snackbar.LENGTH_INDEFINITE).setAction(R.string.permission_rationale, new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.CAMERA}, REQUEST_CAMERA);
+                }
+            })
+                    .show();
+        } else {
+
+            // Camera permission has not been granted yet. Request it directly.
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA}, REQUEST_CAMERA);
+
+        }
+    }
+
+
+    private void requestContactsPermissions() {
+
+        if (ActivityCompat.shouldShowRequestPermissionRationale(MainActivity.this, Manifest.permission.READ_CONTACTS) || ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.WRITE_CONTACTS)) {
+
+            Log.i(TAG, "Displaying contacts permission rationale to pervide additional context.");
+
+            //Display a SnackBar with an explanation and a button to trigger the request.
+            Snackbar.make(mPreview, R.string.permission_rationale, Snackbar.LENGTH_INDEFINITE).setAction(R.string.permission_rationale, new View.OnClickListener(){
+                @Override
+                public void onClick(View view) {
+                    ActivityCompat.requestPermissions(MainActivity.this, PERMISSIONS_CONTACT, REQUEST_CONTACTS);
+                }
+            })
+                    .show();
+        } else {
+
+            //Contact permissions have not been granted yet. Request them directly.
+            ActivityCompat.requestPermissions(MainActivity.this, PERMISSIONS_CONTACT, REQUEST_CONTACTS);
+
+        }
+    }
+
+
+
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        if (requestCode == REQUEST_CAMERA) {
+
+            // Received permission result for camera permission
+            Log.i(TAG, "Received response for Camera permission request.");
+
+            // Check if the only required permission has been granted
+            if (grantResults.length == 1 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+
+                //Camera permission has been granted, preview can be displayed
+                Log.i(TAG, "CAMERA permission has now been granted. Showing preview.");
+                Snackbar.make(mPreview, R.string.permission_rationale, Snackbar.LENGTH_SHORT).show();
+
+            } else {
+
+                Log.i(TAG, "CAMERA permission was NOT granted.");
+                Snackbar.make(mPreview, R.string.permission_rationale, Snackbar.LENGTH_SHORT).show();
+
+            }
+        } else {
+
+            super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        }
+    }
+
+
     
 }

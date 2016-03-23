@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/C:/Users/Chris's%20Profile/Desktop/Github/EventStream/Eventstream/ParseUI-Login/build/intermediates/bundles/debug/res/values-es/values-es.xml -->
-    <eat-comment/>
     <plurals name="com_parse_ui_password_too_short_toast">
         <item quantity="one">La contraseña debe tener al menos %d caracteres</item>
         <item quantity="other">La contraseña debe tener al menos %d caracteres</item>
