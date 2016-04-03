@@ -26,7 +26,7 @@ import java.util.List;
 /**
  * Created by Chris on 2/28/2016.
  */
-public class EventAlbumCustomAdapter extends ArrayAdapter<EventAlbum> {
+public class EventAlbumCustomAdapter extends ArrayAdapter<PhotoParse> {
 
     ImageView left_image;
     ImageView single_image;
@@ -34,19 +34,21 @@ public class EventAlbumCustomAdapter extends ArrayAdapter<EventAlbum> {
     View customView;
     Bitmap bitmap;
 
-    EventAlbum eventAlbum;
+    PhotoParse photoParse;
 
     int counter = 0;
 
     TextView textView;
 
 
-    public EventAlbumCustomAdapter(Context context, List<EventAlbum> eventAlbum) {
-        super(context, R.layout.event_album_grid_view_custom_row, eventAlbum);
-        Toast.makeText(getContext(), "Number of results: ", Toast.LENGTH_SHORT).show();
+    public EventAlbumCustomAdapter(Context context, List<PhotoParse> photoParse) {
+        super(context, R.layout.event_album_grid_view_custom_row, photoParse);
+        //Toast.makeText(getContext(), "Number of results: ", Toast.LENGTH_SHORT).show();
     }
 
     public View getView (int position, View convertView, ViewGroup parent){
+
+
         LayoutInflater imageDisplay = LayoutInflater.from(getContext());
         customView = imageDisplay.inflate(R.layout.event_album_grid_view_custom_row, parent, false);
 
@@ -57,14 +59,20 @@ public class EventAlbumCustomAdapter extends ArrayAdapter<EventAlbum> {
 //        TextView caption = (TextView) customView.findViewById(R.id.caption);
 //        caption.setText(singleCaption);
 
+                photoParse = new PhotoParse(); //Create new instance of object
+                photoParse = getItem(position); //get the Object from the list at the (position)
+        try {
+            byte[] data = photoParse.getImage().getData();
+            bitmap = BitmapFactory.decodeByteArray(data, 0, data.length);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        single_image.setImageBitmap(bitmap); //set the image on the prof page from object
+                //Log.w("custoptergettingBMP: ", " " + eventPhotoStreamGridView.getGridViewBitmap());
 
         //Bitmap left = getItem(position);
-        eventAlbum = new EventAlbum(); //Create new instance of object
-        eventAlbum = getItem(position); //get the Object from the list at the (position)
 
-
-        single_image.setImageBitmap(eventAlbum.getGridViewBitmap()); //set the image on the prof page from object
-        //Log.w("custoptergettingBMP: ", " " + eventPhotoStreamGridView.getGridViewBitmap());
 
         return customView;
     }

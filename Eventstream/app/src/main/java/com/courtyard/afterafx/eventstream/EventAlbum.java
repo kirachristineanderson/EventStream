@@ -38,7 +38,8 @@ public class EventAlbum extends Activity {
 
 
     //for grid view
-    List<EventAlbum> arrayOfEventAlbums = new ArrayList<EventAlbum>();
+    List<PhotoParse> listOfPhotoParseObjects = new ArrayList<PhotoParse>();
+
 
     GridView event_album_grid_view;
     ListAdapter imageAdapter;
@@ -57,6 +58,8 @@ public class EventAlbum extends Activity {
         final int eventID = intent.getIntExtra("EventID", 0);
         final boolean isPrivate = intent.getBooleanExtra("Private", false);
 
+        eventId = eventID;
+
         TextView name = (TextView) findViewById(R.id.joinEventName);
         name.setText(eventName);
 
@@ -64,8 +67,15 @@ public class EventAlbum extends Activity {
         description.setText(eventDescription);
 
         event_album_grid_view = (GridView) findViewById(R.id.event_album_grid_view);
-        imageGridView();
+
         populateGridView();
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        imageGridView();
 
         sharedPreferences = getSharedPreferences(MyPREFERENCES, 1);
 
@@ -130,10 +140,8 @@ public class EventAlbum extends Activity {
     }
 
     public void imageGridView() {
-
-        imageAdapter = new EventAlbumCustomAdapter(EventAlbum.this, arrayOfEventAlbums);
-        event_album_grid_view.setAdapter(imageAdapter);
-
+                imageAdapter = new EventAlbumCustomAdapter(EventAlbum.this, listOfPhotoParseObjects);
+                event_album_grid_view.setAdapter(imageAdapter);
     }
 
 
@@ -145,7 +153,7 @@ public class EventAlbum extends Activity {
 
         ParseQuery<ParseObject> query = ParseQuery.getQuery("PhotoParse");
         //query.include("JoinedEvent");
-        //query.whereEqualTo("ImageName", "profilePicture");
+        query.whereEqualTo("eventID", eventId);
         query.findInBackground(new FindCallback<ParseObject>() {
             public void done(List<ParseObject> results, ParseException e) {
                 if (e == null) {
@@ -160,49 +168,58 @@ public class EventAlbum extends Activity {
                         //Toast.makeText(getApplicationContext(), "ProfilePhoto ParseObject: " + profilePhotoFile, Toast.LENGTH_SHORT).show();
 
                         for (int i = 0; i < numberOfResults; i++) {
-                            profilePhotoFile = results.get(i).getParseFile("image");
-                            EventId = results.get(i).getInt("eventId");
-                            if (profilePhotoFile != null) {
-                                try {
-                                    //Toast.makeText(getContext(), "Got Inside Try", Toast.LENGTH_SHORT).show();
-                                    data = profilePhotoFile.getData();
-                                    Log.w("geteventid" + i + ": ", " " + data);
-                                    bMap = BitmapFactory.decodeByteArray(data, 0, data.length);
-                                    //Log.w("bMap #: " + i + ": ", bMap.toString());
+                            //profilePhotoFile = results.get(i).getParseFile("image");
+                            //EventId = results.get(i).getInt("eventId");
 
-                                    // listOfPictures.add(bMap);
-
-                                    //create list of UserprofileActivity objects containing eventid and bitmap
-                                    EventAlbum eventAlbum = new EventAlbum();
-                                    eventAlbum.setEventId(EventId);
-                                    eventAlbum.setGridViewBitmap(bMap);
-                                    //Log.w("geteventid" + i + ": ", " " + userProfileActivity.getEventId());
-                                    //Log.w("eventPhotoStrViews: " + i + ": ", " " + eventPhotoStreamGridViews.getGridViewBitmap());
-                                    arrayOfEventAlbums.add(eventAlbum);
-                                    //Log.w("arrayofuserprofileac" + i + ": ", " " + arrayOfUserProfileActivities.get(i));
-
-
-                                    //only add the event id if there is one in the future there should always be one but now there isnt
-//                                    if(EventId >0){
+                            PhotoParse photoParse = (PhotoParse) results.get(i);
+                            listOfPhotoParseObjects.add(photoParse);
+//                            if (profilePhotoFile != null) {
+//                                try {
+//                                    //Toast.makeText(getContext(), "Got Inside Try", Toast.LENGTH_SHORT).show();
+    //                                data = profilePhotoFile.getData();
+////                                    //Log.w("geteventid" + i + ": ", " " + data);
+////                                    bMap = BitmapFactory.decodeByteArray(data, 0, data.length);
+//                                    //Log.w("bMap #: " + i + ": ", bMap.toString());
 //
-//                                        listOfEventIds.add(EventId);
+//                                    // listOfPictures.add(bMap);
 //
-//                                    }
-
-
-                                    //setListviewBitmap(bMap);
-                                    //single_image.setImageBitmap(bMap);
-                                } catch (ParseException e2) {
-                                    // TODO Auto-generated catch block
-                                    e2.printStackTrace();
-                                }
-                            }
+//                                    //create list of UserprofileActivity objects containing eventid and bitmap
+//                                   // EventAlbum eventAlbum = new EventAlbum();
+//                                    //eventAlbum.setEventId(EventId);
+//                                    //eventAlbum.setGridViewBitmap(bMap);
+//                                    //Log.w("geteventid" + i + ": ", " " + userProfileActivity.getEventId());
+//                                    //Log.w("eventPhotoStrViews: " + i + ": ", " " + eventPhotoStreamGridViews.getGridViewBitmap());
+//
+//                                    photoParse.setImage(bMap);
+//                                    photoParse.setEventId(EventId);
+//                                    arrayOfEventAlbums.add(photoParse);
+//                                    //Log.w("arrayofuserprofileac" + i + ": ", " " + arrayOfUserProfileActivities.get(i));
+//
+//
+//                                    //only add the event id if there is one in the future there should always be one but now there isnt
+////                                    if(EventId >0){
+////
+////                                        listOfEventIds.add(EventId);
+////
+////                                    }
+//
+//
+//                                    //setListviewBitmap(bMap);
+//                                    //single_image.setImageBitmap(bMap);
+//                                } catch (ParseException e2) {
+//                                    // TODO Auto-generated catch block
+//                                    e2.printStackTrace();
+//                                }
+//                            }
+//                        }
+//                        //Toast.makeText(getApplicationContext(), "How many files in listOfPictures: " + listOfPictures.size(), Toast.LENGTH_SHORT).show();
+//
+//                    }
+//                } else {
+//                    Log.d("score", "Error: " + e.getMessage());
+//                }
                         }
-                        //Toast.makeText(getApplicationContext(), "How many files in listOfPictures: " + listOfPictures.size(), Toast.LENGTH_SHORT).show();
-
                     }
-                } else {
-                    Log.d("score", "Error: " + e.getMessage());
                 }
             }
         });
