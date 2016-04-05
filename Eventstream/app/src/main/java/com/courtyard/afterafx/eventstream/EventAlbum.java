@@ -52,7 +52,7 @@ public class EventAlbum extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event_album);
 
-        Intent intent = getIntent();
+        final Intent intent = getIntent();
         final String eventName = intent.getStringExtra("Name");
         final String eventDescription = intent.getStringExtra("Description");
         final int eventID = intent.getIntExtra("EventID", 0);
@@ -69,6 +69,7 @@ public class EventAlbum extends Activity {
         event_album_grid_view = (GridView) findViewById(R.id.event_album_grid_view);
 
         populateGridView();
+
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
@@ -137,6 +138,27 @@ public class EventAlbum extends Activity {
                     }
                 }
         );
+
+
+        event_album_grid_view.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                PhotoParse photoParse = (PhotoParse) parent.getItemAtPosition(position);
+                //System.out.println(photoParse);
+                byte[] imageData = new byte[0];
+                Intent intent1 = new Intent(EventAlbum.this, ImageViewActivity.class);
+                try {
+                    imageData = photoParse.getImage().getData();
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+                intent1.putExtra("image", imageData);
+                System.out.println(imageData);
+
+                startActivity(intent1);
+
+            }
+        });
     }
 
     public void imageGridView() {

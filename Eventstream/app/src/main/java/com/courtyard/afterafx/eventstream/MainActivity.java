@@ -352,7 +352,7 @@ public class MainActivity extends Activity {
 
         // Resize photo from camera byte array
         Bitmap eventImage = BitmapFactory.decodeByteArray(data, 0, data.length);
-        Bitmap eventImageScaled = Bitmap.createScaledBitmap(eventImage, 200, 200
+        Bitmap eventImageScaled = Bitmap.createScaledBitmap(eventImage, 800, 800
                 * eventImage.getHeight() / eventImage.getWidth(), false);
 
         // Override Android default landscape orientation and save portrait
@@ -368,7 +368,6 @@ public class MainActivity extends Activity {
 
 
     }
-
 
 
 
