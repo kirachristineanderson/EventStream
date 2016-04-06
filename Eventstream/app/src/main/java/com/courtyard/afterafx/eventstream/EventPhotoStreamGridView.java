@@ -3,6 +3,8 @@ package com.courtyard.afterafx.eventstream;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.os.Handler;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -30,7 +32,7 @@ public class EventPhotoStreamGridView extends AppCompatActivity {
     Bitmap gridViewBitmap;
     int eventId;
     List<EventPhotoStreamGridView> arrayOfEventPhotoStreamGridViews = new ArrayList<EventPhotoStreamGridView>();
-
+    SwipeRefreshLayout mSwipeRefreshLayout;
     GridView photo_stream_grid_view;
     ListAdapter imageAdapter;
 
@@ -43,10 +45,17 @@ public class EventPhotoStreamGridView extends AppCompatActivity {
         setContentView(R.layout.activity_event_photo_stream_grid_view);
 
         photo_stream_grid_view = (GridView) findViewById(R.id.photo_stream_grid_view);
+        mSwipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.activity_main_swipe_refresh_layout);
 
         imageGridView();
         populateGridView();
+
+
+
     }
+
+
+
 
     public void imageGridView() {
 

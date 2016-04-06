@@ -10,15 +10,6 @@
     tools:context="com.courtyard.afterafx.eventstream.EventAlbum"
     android:background="#9575cd">
 
-    <GridView
-        android:layout_width="wrap_content"
-        android:layout_height="420dp"
-        android:id="@+id/event_album_grid_view"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:background="#FAFAFA"
-        android:numColumns="3" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -26,21 +17,11 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Event Name"
         android:id="@+id/joinEventName"
-        android:layout_alignParentTop="true"
+        android:textColor="#FFFFFF"
+        android:textSize="20dp"
+        android:layout_below="@+id/header_filler"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:textColor="#FFFFFF" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Description"
-        android:id="@+id/joinEventDescription"
-        android:layout_below="@+id/joinEventName"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:textColor="#FFFFFF" />
+        android:layout_alignParentStart="true" />
 
     <ImageView
         android:layout_width="fill_parent"
@@ -56,19 +37,47 @@
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Join Event!"
+        android:text="Join Event"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
         android:id="@+id/joinEventButton"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:background="@drawable/button6"
+
+
+        android:layout_alignTop="@+id/sendPhotoEvent"
+        android:layout_alignBottom="@+id/sendPhotoEvent"
+        android:layout_alignRight="@+id/header_filler"
+        android:layout_alignEnd="@+id/header_filler" />
 
     <Button
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="35dp"
         android:text="Send Photos to this Event"
         android:id="@+id/sendPhotoEvent"
-        android:layout_below="@+id/joinEventDescription"
-        android:layout_alignRight="@+id/event_album_grid_view"
-        android:layout_alignEnd="@+id/event_album_grid_view" />
+        android:background="@drawable/button5"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:layout_below="@+id/joinEventName"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/activity_main_swipe_refresh_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="470dp"
+        android:layout_alignParentBottom="true">
+
+
+    <GridView
+        android:layout_width="wrap_content"
+        android:layout_height="470dp"
+        android:id="@+id/event_album_grid_view"
+
+        android:numColumns="3"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:background="#cdbee6"/>
+    </android.support.v4.widget.SwipeRefreshLayout>
 
 </RelativeLayout>

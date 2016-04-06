@@ -9,6 +9,8 @@ import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.os.Handler;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -38,12 +40,12 @@ public class EventAlbum extends Activity {
 
 
     //for grid view
-    List<PhotoParse> listOfPhotoParseObjects = new ArrayList<PhotoParse>();
+    List<PhotoParse> listOfPhotoParseObjects=new ArrayList<>();
 
 
     GridView event_album_grid_view;
     ListAdapter imageAdapter;
-
+    SwipeRefreshLayout mSwipeRefreshLayout;
     Bitmap gridViewBitmap;
     int eventId;
 
@@ -51,7 +53,7 @@ public class EventAlbum extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event_album);
-
+        mSwipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.activity_main_swipe_refresh_layout);
         final Intent intent = getIntent();
         final String eventName = intent.getStringExtra("Name");
         final String eventDescription = intent.getStringExtra("Description");
@@ -63,8 +65,8 @@ public class EventAlbum extends Activity {
         TextView name = (TextView) findViewById(R.id.joinEventName);
         name.setText(eventName);
 
-        TextView description = (TextView) findViewById(R.id.joinEventDescription);
-        description.setText(eventDescription);
+//        TextView description = (TextView) findViewById(R.id.joinEventDescription);
+//        description.setText(eventDescription);
 
         event_album_grid_view = (GridView) findViewById(R.id.event_album_grid_view);
 
@@ -78,7 +80,32 @@ public class EventAlbum extends Activity {
 
         imageGridView();
 
-        sharedPreferences = getSharedPreferences(MyPREFERENCES, 1);
+        mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        listOfPhotoParseObjects=new ArrayList<>();
+                        populateGridView();
+
+                        try {
+                            Thread.sleep(1000);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+
+                        imageGridView();
+                        mSwipeRefreshLayout.setRefreshing(false);
+                    }
+                }, 2500);
+            }
+        });
+    
+
+
+
+    sharedPreferences = getSharedPreferences(MyPREFERENCES, 1);
 
         Button joinButton = (Button) findViewById(R.id.joinEventButton);
         final JoinedEvent joinedEvent = new JoinedEvent();
@@ -194,6 +221,7 @@ public class EventAlbum extends Activity {
                             //EventId = results.get(i).getInt("eventId");
 
                             PhotoParse photoParse = (PhotoParse) results.get(i);
+
                             listOfPhotoParseObjects.add(photoParse);
 //                            if (profilePhotoFile != null) {
 //                                try {
