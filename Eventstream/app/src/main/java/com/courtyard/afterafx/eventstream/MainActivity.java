@@ -50,7 +50,7 @@ public class MainActivity extends Activity {
     private static final int REQUEST_CONTACTS = 0;
     private static String[] PERMISSIONS_CONTACT = {Manifest.permission.READ_CONTACTS, Manifest.permission.WRITE_CONTACTS};
     private ParseFile thumbnail;
-
+    private static int cameraID = Camera.CameraInfo.CAMERA_FACING_BACK;
 
     //Returns true if our app is sent to the background. Returns false otherwise.
     public static boolean isApplicationSentToBackground(final Context context) {
@@ -84,7 +84,7 @@ public class MainActivity extends Activity {
         Camera c = null;
         try {
             Log.d(TAG, "Open Camera");
-            c = Camera.open(); // attempt to get a Camera instance
+            c = Camera.open(cameraID); // attempt to get a Camera instance
             Camera.Parameters params = c.getParameters();
             params.setFocusMode(Camera.Parameters.FOCUS_MODE_CONTINUOUS_PICTURE);
             c.setParameters(params);
@@ -95,7 +95,35 @@ public class MainActivity extends Activity {
         return c; // returns null if camera is unavailable
     }
 
+    private static int getFrontCameraId(){
+        int camId = -1;
+        int numberOfCameras = Camera.getNumberOfCameras();
+        Camera.CameraInfo ci = new Camera.CameraInfo();
 
+        for(int i = 0;i < numberOfCameras;i++){
+            Camera.getCameraInfo(i,ci);
+            if(ci.facing == Camera.CameraInfo.CAMERA_FACING_FRONT){
+                camId = i;
+            }
+        }
+
+        return camId;
+    }
+
+    private static int getBackCameraId(){
+        int camId = -1;
+        int numberOfCameras = Camera.getNumberOfCameras();
+        Camera.CameraInfo ci = new Camera.CameraInfo();
+
+        for(int i = 0;i < numberOfCameras;i++){
+            Camera.getCameraInfo(i,ci);
+            if(ci.facing == Camera.CameraInfo.CAMERA_FACING_BACK){
+                camId = i;
+            }
+        }
+
+        return camId;
+    }
 
 
     private static File getOutputMediaFile(int type) {
@@ -162,17 +190,29 @@ public class MainActivity extends Activity {
         Button profileButton = (Button) findViewById(R.id.button_profile);
         Button eventsButton = (Button) findViewById(R.id.button_events);
         Button createButton = (Button) findViewById(R.id.button_create);
-
+        Button switchCameraButton = (Button) findViewById(R.id.button_switchCamera);
 
         // Create an instance of Camera
         mCamera = getCameraInstance();
-
 
         // Create our Preview view and set it as the content of our activity.
         mPreview = new CameraPreview(this, mCamera);
         final FrameLayout preview = (FrameLayout) findViewById(R.id.camera_preview);
         preview.addView(mPreview);
 
+        switchCameraButton.setOnClickListener(
+                new View.OnClickListener() {
+                    public void onClick(View v) {
+                        if(cameraID == Camera.CameraInfo.CAMERA_FACING_FRONT){
+                            cameraID = getBackCameraId();
+                        }
+                        else if(cameraID == Camera.CameraInfo.CAMERA_FACING_BACK){
+                            cameraID = getFrontCameraId();
+                        }
+                        recreate();
+                    }
+                }
+        );
 
         // Add a listener to the Capture button
         captureButton.setOnClickListener(
@@ -316,7 +356,7 @@ public class MainActivity extends Activity {
         if(numCams > 0){
 
             try {
-                mCamera = Camera.open(0);
+                mCamera = Camera.open(cameraID);
                 mCamera.startPreview();
                 mPreview.setCamera(mCamera);
 

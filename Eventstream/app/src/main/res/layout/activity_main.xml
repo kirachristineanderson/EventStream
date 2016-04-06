@@ -30,6 +30,14 @@
             android:textColor="#000000"
             android:visibility="visible"
             android:background="@drawable/cameragraphic"/>
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Switch Camera"
+            android:id="@+id/button_switchCamera"
+            android:layout_gravity="right|top" />
     </FrameLayout>
 
 
