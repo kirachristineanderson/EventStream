@@ -57,27 +57,44 @@
         android:background="@drawable/button5"
         android:textAllCaps="false"
         android:textColor="#FFFFFF"
-        android:layout_below="@+id/joinEventName"
+        android:layout_above="@+id/activity_main_swipe_refresh_layout"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
     <android.support.v4.widget.SwipeRefreshLayout
         android:id="@+id/activity_main_swipe_refresh_layout"
         android:layout_width="wrap_content"
-        android:layout_height="470dp"
+        android:layout_height="430dp"
         android:layout_alignParentBottom="true">
 
 
-    <GridView
-        android:layout_width="wrap_content"
-        android:layout_height="470dp"
-        android:id="@+id/event_album_grid_view"
+        <GridView
+            android:layout_width="wrap_content"
+            android:layout_height="430dp"
+            android:id="@+id/event_album_grid_view"
+            android:horizontalSpacing="0dp"
+            android:verticalSpacing="2dp"
+            android:columnWidth="130dp"
+            android:stretchMode="spacingWidthUniform"
+            android:numColumns="3"
 
-        android:numColumns="3"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:background="#cdbee6"/>
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:background="#cdbee6"/>
     </android.support.v4.widget.SwipeRefreshLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Event Description"
+        android:textColor="#FFFFFF"
+        android:id="@+id/joinEventDescription"
+        android:layout_below="@+id/joinEventName"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_above="@+id/sendPhotoEvent"
+        android:layout_toStartOf="@+id/joinEventButton"
+        android:layout_alignRight="@+id/joinEventButton"
+        android:layout_alignEnd="@+id/joinEventButton" />
 
 </RelativeLayout>

@@ -65,8 +65,8 @@ public class EventAlbum extends Activity {
         TextView name = (TextView) findViewById(R.id.joinEventName);
         name.setText(eventName);
 
-//        TextView description = (TextView) findViewById(R.id.joinEventDescription);
-//        description.setText(eventDescription);
+        TextView description = (TextView) findViewById(R.id.joinEventDescription);
+       description.setText(eventDescription);
 
         event_album_grid_view = (GridView) findViewById(R.id.event_album_grid_view);
 
