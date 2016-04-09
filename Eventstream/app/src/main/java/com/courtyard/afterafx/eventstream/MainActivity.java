@@ -274,6 +274,10 @@ public class MainActivity extends Activity {
                         View k = findViewById(R.id.button_create);
                         k.setVisibility(View.GONE);
 
+                        View u = findViewById(R.id.button_switchCamera);
+                        u.setVisibility(View.GONE);
+
+
 
 
                         //After taking a picture, open the CameraFragment
