@@ -4,23 +4,28 @@ package com.courtyard.afterafx.eventstream;
  * Created by Chris on 2/17/2016.
  */
 import android.content.Context;
+import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.*;
 import android.widget.*;
+import android.graphics.Bitmap;
+
+import com.parse.ParseException;
+
 import java.util.List;
 
 //Extends the arrayAdapter of the object type your passing over
-public class ProfileListCustomAdapter extends ArrayAdapter<UserProfileActivity> {
+public class ProfileListCustomAdapter extends ArrayAdapter<Event> {
 
     ImageView single_image;
     View customView;
-
-    UserProfileActivity userProfileActivity;
+    Bitmap bitmap;
+    Event event;
 
 
     //takes in the list of UserProfileActivity Objects that are passed over
-    public ProfileListCustomAdapter(Context context, List<UserProfileActivity> userProfileActivity){
-        super(context, R.layout.profile_list_custom_row, userProfileActivity);
+    public ProfileListCustomAdapter(Context context, List<Event> listOfEventObjects){
+        super(context, R.layout.profile_list_custom_row, listOfEventObjects);
     }
 
     @Override
@@ -29,17 +34,33 @@ public class ProfileListCustomAdapter extends ArrayAdapter<UserProfileActivity> 
         customView = imageDisplay.inflate(R.layout.profile_list_custom_row, parent, false);
 
 
-        userProfileActivity = new UserProfileActivity(); //Create new instance of object
-        userProfileActivity = getItem(position); //get the Object from the list at the (position)
-
-
+        event = new Event(); //Create new instance of object
+        event = getItem(position); //get the Object from the list at the (position)
         single_image = (ImageView) customView.findViewById(R.id.left_image);
-        single_image.setImageBitmap(userProfileActivity.getListviewBitmap()); //set the image on the prof page from object
+        if(event.getEventAvatar() != null) {
+            try {
+                byte[] data = event.getEventAvatar().getData();
+                bitmap = BitmapFactory.decodeByteArray(data, 0, data.length);
+                single_image.setImageBitmap(bitmap); //set the image on the prof page from object
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+        }
+        else{
+            single_image.setImageResource(R.drawable.ic_launcher);
+        }
 
 
-        TextView image_caption = (TextView) customView.findViewById(R.id.image_caption);
-        int eventIdInt = userProfileActivity.getEventId();
-        image_caption.setText(""+eventIdInt); //I guess setText has to pass a string? I couldn't send only the int
+
+
+
+        TextView event_name = (TextView) customView.findViewById(R.id.event_name);
+        String eventName = event.getName();
+        event_name.setText(eventName); //I guess setText has to pass a string? I couldn't send only the int
+
+        TextView event_description = (TextView) customView.findViewById(R.id.event_description);
+        String eventDescription = event.getDescription();
+        event_description.setText(eventDescription);
 
         return customView; //return info back to userProfileActivity to populate the listview
         //*******no longer using any of this********

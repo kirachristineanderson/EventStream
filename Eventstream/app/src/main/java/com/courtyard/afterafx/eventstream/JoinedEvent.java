@@ -24,12 +24,12 @@ public class JoinedEvent extends ParseObject {
         return getString("objectId");
     }
 
-    public void setUser(ParseUser user){
-        put("User", user);
+    public void setUser(String user){
+        put("UserId", user);
     }
 
-    public ParseUser getUser(){
-        return ParseUser.getCurrentUser();
+    public String getUser(){
+        return getString("UserId");
     }
 
     public void setEventId(int id){

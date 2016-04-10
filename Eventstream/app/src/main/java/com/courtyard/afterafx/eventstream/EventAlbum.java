@@ -115,7 +115,7 @@ public class EventAlbum extends Activity {
 
                         if(!isPrivate){
                             //joinedEvent = new JoinedEvent();
-                            joinedEvent.setUser(ParseUser.getCurrentUser());
+                            joinedEvent.setUser(ParseUser.getCurrentUser().getObjectId());
                             joinedEvent.setEventId(eventID);
                             joinedEvent.setName(eventName);
 

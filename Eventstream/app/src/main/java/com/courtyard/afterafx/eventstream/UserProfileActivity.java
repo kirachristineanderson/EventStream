@@ -5,6 +5,7 @@ import android.app.ListActivity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Paint;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -21,6 +22,7 @@ import android.widget.Toast;
 import com.parse.FindCallback;
 import com.parse.GetCallback;
 import com.parse.GetDataCallback;
+import com.parse.Parse;
 import com.parse.ParseException;
 import com.parse.ParseFile;
 import com.parse.ParseObject;
@@ -52,17 +54,15 @@ public class UserProfileActivity extends AppCompatActivity {//did extend ListAct
 
     private ListView profile_list_view; //the list view on profile page (isclickable and leads to eventphotostreamgridview)
 
-    //pictures array to send to ProfileListCustomAdapter
-    List<Bitmap> listOfPictures = new ArrayList<>();
-
-    //list of corresponding event ids
-    List<Integer> listOfEventIds = new ArrayList<Integer>();
 
     //USING THIS
     //I dont think i need a list of bitmaps i think individual ones are needed to create more instances of this object
     Bitmap listviewBitmap;
     int eventId;
-    List<UserProfileActivity> arrayOfUserProfileActivities = new ArrayList<UserProfileActivity>();
+    
+
+    List<Event> listOfEventObjects = new ArrayList<Event>();
+    List<JoinedEvent> joinedEventList = new ArrayList<>();
 
     //made this global so EventImageDisplayListView can access it
     ListAdapter imageAdapter;
@@ -77,11 +77,21 @@ public class UserProfileActivity extends AppCompatActivity {//did extend ListAct
 
         loadProfilePicture(); //puts profile picture in parse
 
-        //EventImageDisplay(); //assigns pictures to event images
-        imageListView(); //implements and sets the list view
-
+        GetJoinedEvents();
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         //Populate the listOfPictures array
         EventImageDisplayListView();
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        //EventImageDisplay(); //assigns pictures to event images
+        imageListView(); //implements and sets the list view
 
 
 
@@ -95,7 +105,7 @@ public class UserProfileActivity extends AppCompatActivity {//did extend ListAct
 
     public void imageListView() {
 
-        imageAdapter = new ProfileListCustomAdapter(UserProfileActivity.this, arrayOfUserProfileActivities);
+        imageAdapter = new ProfileListCustomAdapter(UserProfileActivity.this, listOfEventObjects);
         profile_list_view.setAdapter(imageAdapter);
 
         profile_list_view.setClickable(true);
@@ -111,72 +121,71 @@ public class UserProfileActivity extends AppCompatActivity {//did extend ListAct
         });
     }
 
-    //Get the Event Images from parse and put them in the listOfPictures array to send to ProfileListCustomAdapter
-    public void EventImageDisplayListView(){
-        ParseQuery<ParseObject> query = ParseQuery.getQuery("ProfilePhoto");
-        query.whereEqualTo("ImageName", "profilePicture");
+    public void GetJoinedEvents(){
+
+        ParseQuery<ParseObject> query = ParseQuery.getQuery("JoinedEvent");
+        String id = ParseUser.getCurrentUser().getObjectId();
+
+        //query.whereEqualTo("UserId", id);
+        //Toast.makeText(getApplicationContext(), "inside joinedevents ", Toast.LENGTH_SHORT).show();
+
         query.findInBackground(new FindCallback<ParseObject>() {
             public void done(List<ParseObject> results, ParseException e) {
+                Toast.makeText(getApplicationContext(), "inside done, results size:" +results.size(), Toast.LENGTH_SHORT).show();
+
                 if (e == null) {
+                    //Toast.makeText(getApplicationContext(), "inside if==null ", Toast.LENGTH_SHORT).show();
+
                     int numberOfResults = results.size();
-                    for (int i = 0; i < numberOfResults; i++) {
-                        Log.w("results array: ", results.get(i).toString());
-                    }
-                    ParseFile profilePhotoFile = null;
-                    int EventId;
-                    byte[] data;
-                    Bitmap bMap;
-                    //Toast.makeText(getApplicationContext(), "Number of results: " + numberOfResults, Toast.LENGTH_SHORT).show();
 
                     if (numberOfResults > 0) {
-                        //Toast.makeText(getApplicationContext(), "ProfilePhoto ParseObject: " + profilePhotoFile, Toast.LENGTH_SHORT).show();
 
-                        for (int i = 0; i < numberOfResults; i++) {
-                            profilePhotoFile = results.get(i).getParseFile("image");
-                            EventId = results.get(i).getInt("EventId");
-                            if (profilePhotoFile != null) {
-                                try {
-                                    //Toast.makeText(getContext(), "Got Inside Try", Toast.LENGTH_SHORT).show();
-                                    data = profilePhotoFile.getData();
-                                    bMap = BitmapFactory.decodeByteArray(data, 0, data.length);
-                                    //Log.w("bMap #: " + i + ": ", bMap.toString());
-
-                                   // listOfPictures.add(bMap);
-
-                                    //create list of UserprofileActivity objects containing eventid and bitmap
-                                    UserProfileActivity userProfileActivity = new UserProfileActivity();
-                                    userProfileActivity.setEventId(EventId);
-                                    userProfileActivity.setListviewBitmap(bMap);
-                                    //Log.w("geteventid" + i + ": ", " " + userProfileActivity.getEventId());
-                                    //Log.w("getlistviewbitmap: " + i + ": ", " " + userProfileActivity.getListviewBitmap());
-                                    arrayOfUserProfileActivities.add(userProfileActivity);
-                                    //Log.w("arrayofuserprofileac" + i + ": ", " " + arrayOfUserProfileActivities.get(i));
-
-
-                                    //only add the event id if there is one in the future there should always be one but now there isnt
-//                                    if(EventId >0){
-//
-//                                        listOfEventIds.add(EventId);
-//
-//                                    }
-
-
-                                    //setListviewBitmap(bMap);
-                                    //single_image.setImageBitmap(bMap);
-                                } catch (ParseException e2) {
-                                    // TODO Auto-generated catch block
-                                    e2.printStackTrace();
-                                }
-                            }
+                        for(int i = 0; i < results.size(); i++){
+                            joinedEventList.add((JoinedEvent)results.get(i));
                         }
-                        //Toast.makeText(getApplicationContext(), "How many files in listOfPictures: " + listOfPictures.size(), Toast.LENGTH_SHORT).show();
 
                     }
                 } else {
-                    Log.d("score", "Error: " + e.getMessage());
+                    Log.w("score", "Error: " + e.getMessage());
                 }
             }
         });
+
+    }//end of SimpleEventImageDisplay method
+
+
+
+
+    //Get the Event Images from parse and put them in the listOfPictures array to send to ProfileListCustomAdapter
+    public void EventImageDisplayListView(){
+
+
+
+        for(int i = 0; i < joinedEventList.size(); i++){
+            final int eventID = joinedEventList.get(i).getEventId();
+            final String eventDescription = joinedEventList.get(i).getEventDescription();
+            final String eventName = joinedEventList.get(i).getEventName();
+
+            ParseQuery<ParseObject> query = ParseQuery.getQuery("PhotoParse");
+            query.whereEqualTo("eventId", eventID);
+            query.getFirstInBackground(new GetCallback<ParseObject>() {
+                public void done(ParseObject result, ParseException e) {
+                    Event event = new Event();
+                    event.setDescription(eventDescription);
+                    event.setName(eventName);
+                    event.setEventId(eventID);
+                    if (e == null) {
+                        PhotoParse photo = (PhotoParse) result;
+                        event.setEventAvatar(photo.getImage());
+                    } else {
+                        Log.d("score", "Error: " + e.getMessage());
+                    }
+                    listOfEventObjects.add(event);
+                }
+            });
+        }
+
+
 
 
     }//end of SimpleEventImageDisplay method

@@ -1,6 +1,7 @@
 package com.courtyard.afterafx.eventstream;
 
 import com.parse.ParseClassName;
+import com.parse.ParseFile;
 import com.parse.ParseGeoPoint;
 import com.parse.ParseObject;
 import com.parse.ParseUser;
@@ -88,6 +89,13 @@ public class Event extends ParseObject{
 
     public void setEndDate(Date d){
         put("endDate", d);
+    }
+
+    public void setEventAvatar(ParseFile eventAvatar){
+        put("eventAvatar", eventAvatar);
+    }
+    public ParseFile getEventAvatar(){
+        return getParseFile("eventAvatar");
     }
 
 }
