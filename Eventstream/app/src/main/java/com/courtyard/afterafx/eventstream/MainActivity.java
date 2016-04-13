@@ -23,9 +23,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
 import android.hardware.Camera;
-import android.os.Bundle;
-import android.os.Environment;
-import android.support.annotation.NonNull;
+import android.os.*;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
@@ -304,6 +302,7 @@ public class MainActivity extends Activity {
                     public void onClick(View v) {
                         Intent intent = new Intent(MainActivity.this, UserProfileActivity.class);
                         startActivity(intent);
+                        new Thread(new Task()).start();
                     }
                 }
         );
@@ -313,6 +312,7 @@ public class MainActivity extends Activity {
                     public void onClick(View v) {
                         Intent intent = new Intent(MainActivity.this, EventsActivity.class);
                         startActivity(intent);
+                        new Thread(new Task()).start();
                     }
                 }
         );
@@ -465,7 +465,7 @@ public class MainActivity extends Activity {
 
 
     @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
         if (requestCode == REQUEST_CAMERA) {
 
             // Received permission result for camera permission
@@ -490,6 +490,18 @@ public class MainActivity extends Activity {
         }
     }
 
+    class Task implements Runnable {
+        @Override
+        public void run() {
 
-    
+            android.os.Process.setThreadPriority(android.os.Process.THREAD_PRIORITY_BACKGROUND);
+
+//            try {
+//                Thread.sleep(1000);
+//
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            }
+        }
+    }
 }

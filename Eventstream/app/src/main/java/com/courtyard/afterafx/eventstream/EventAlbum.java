@@ -80,6 +80,7 @@ public class EventAlbum extends Activity {
 
         imageGridView();
 
+
         mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
@@ -108,22 +109,23 @@ public class EventAlbum extends Activity {
     sharedPreferences = getSharedPreferences(MyPREFERENCES, 1);
 
         Button joinButton = (Button) findViewById(R.id.joinEventButton);
-        final JoinedEvent joinedEvent = new JoinedEvent();
+        //final JoinedEvent joinedEvent = new JoinedEvent();
+        final ProfileEvent profileEvent = new ProfileEvent();
         joinButton.setOnClickListener(
                 new View.OnClickListener() {
                     public void onClick(View v) {
 
                         if(!isPrivate){
                             //joinedEvent = new JoinedEvent();
-                            joinedEvent.setUser(ParseUser.getCurrentUser().getObjectId());
-                            joinedEvent.setEventId(eventID);
-                            joinedEvent.setName(eventName);
+                            profileEvent.setEventCreator(ParseUser.getCurrentUser());
+                            profileEvent.setEventId(eventID);
+                            profileEvent.setName(eventName);
 
                             if(eventDescription != null){
-                                joinedEvent.setDescription(eventDescription);
+                                profileEvent.setDescription(eventDescription);
                             }
 
-                            joinedEvent.saveInBackground(new SaveCallback() {
+                            profileEvent.saveInBackground(new SaveCallback() {
                                 @Override
                                 public void done(ParseException e) {
 
@@ -162,6 +164,9 @@ public class EventAlbum extends Activity {
                         SharedPreferences.Editor editor = sharedPreferences.edit();
                         editor.putInt("primaryEventID", eventID);
                         editor.commit();
+
+                        Intent intent1 = new Intent(EventAlbum.this, MainActivity.class);
+                        startActivity(intent1);
                     }
                 }
         );
@@ -292,5 +297,16 @@ public class EventAlbum extends Activity {
 
     public void setEventId(int eventId) {
         this.eventId = eventId;
+    }
+
+    class Task implements Runnable {
+        @Override
+        public void run() {
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
     }
 }

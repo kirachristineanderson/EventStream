@@ -22,6 +22,7 @@ public class ParseApplication extends Application {
         ParseObject.registerSubclass(Event.class);
         ParseObject.registerSubclass(PhotoParse.class);
         ParseObject.registerSubclass(JoinedEvent.class);
+        ParseObject.registerSubclass(ProfileEvent.class);
 
         // Enable Local Datastore.
         Parse.enableLocalDatastore(this);

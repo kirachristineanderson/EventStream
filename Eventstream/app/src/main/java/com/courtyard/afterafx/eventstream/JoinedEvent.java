@@ -36,24 +36,24 @@ public class JoinedEvent extends ParseObject {
         put("eventId", id);
     }
 
-    public int getEventId(){
+    public int getId(){
         return getInt("eventId");
     }
 
-    public String getEventName(){
+    public void setName(String n){
+        put("eventName", n);
+    }
+
+    public String getName(){
         return getString("eventName");
     }
 
-    public void setName(String name){
-        put("eventName", name);
+    public void setDescription(String s){
+        put("eventDescription", s);
     }
 
-    public String getEventDescription(){
+    public String getDescription(){
         return getString("eventDescription");
-    }
-
-    public void setDescription(String description){
-        put("eventDescription", description);
     }
 
 }

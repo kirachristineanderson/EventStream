@@ -57,6 +57,8 @@ public class EventsActivity extends ListActivity {
                         intent.putExtra("Private", isPrivate);
 
                         startActivity(intent);
+
+                        new Thread(new Task()).start();
                     }
                 });
 
@@ -75,6 +77,17 @@ public class EventsActivity extends ListActivity {
             // If a new post has been added, update
             // the list of posts
             updateList();
+        }
+    }
+
+    class Task implements Runnable {
+        @Override
+        public void run() {
+            try {
+                Thread.sleep(2000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
     }
 

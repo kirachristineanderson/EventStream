@@ -8,6 +8,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.Paint;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -36,21 +37,23 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UserProfileActivity extends AppCompatActivity {//did extend ListActivity
+//public class UserProfileActivity extends AppCompatActivity {//did extend ListActivity
+public class UserProfileActivity extends ListActivity {
 
     ParseQueryAdapter<ParseObject> profileAdapter;
     CustomAdapter customAdapter;
+    //LevelAdapter levelAdapter;
 
     //new variables for new list view
     private ImageView profilePicture;
     private Bitmap bitmap;
 
-    //put images in parse
+//    //put images in parse
     private String imageObjectId;
     private Uri uri;
 
     //get images from parse for listview
-    private ImageView single_image;
+    //private ImageView single_image;
 
     private ListView profile_list_view; //the list view on profile page (isclickable and leads to eventphotostreamgridview)
 
@@ -61,8 +64,8 @@ public class UserProfileActivity extends AppCompatActivity {//did extend ListAct
     int eventId;
     
 
-    List<Event> listOfEventObjects = new ArrayList<Event>();
-    List<JoinedEvent> joinedEventList = new ArrayList<>();
+    //List<Event> listOfEventObjects = new ArrayList<Event>();
+    //List<JoinedEvent> joinedEventList = new ArrayList<>();
 
     //made this global so EventImageDisplayListView can access it
     ListAdapter imageAdapter;
@@ -72,26 +75,35 @@ public class UserProfileActivity extends AppCompatActivity {//did extend ListAct
         super.onCreate(savedInstanceState);
         setContentView(R.layout.user_profile);
 
+        profileAdapter = new ParseQueryAdapter<>(this, JoinedEvent.class);
+        profileAdapter.setTextKey("eventName");
+        profileAdapter.setTextKey("eventDescription");
+
+        customAdapter = new CustomAdapter(this);
+
+        setListAdapter(customAdapter);
+
+
         profilePicture = (ImageView) findViewById(R.id.profilePicture);
-        profile_list_view = (ListView) findViewById(R.id.profile_list_view);
+//        profile_list_view = (ListView) findViewById(R.id.profile_list_view);
 
         loadProfilePicture(); //puts profile picture in parse
 
-        GetJoinedEvents();
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        //Populate the listOfPictures array
-        EventImageDisplayListView();
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        //EventImageDisplay(); //assigns pictures to event images
-        imageListView(); //implements and sets the list view
+//        GetJoinedEvents();
+//        try {
+//            Thread.sleep(1000);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
+//        //Populate the listOfPictures array
+//        EventImageDisplayListView();
+//        try {
+//            Thread.sleep(1000);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
+//        //EventImageDisplay(); //assigns pictures to event images
+//        imageListView(); //implements and sets the list view
 
 
 
@@ -103,92 +115,92 @@ public class UserProfileActivity extends AppCompatActivity {//did extend ListAct
     }
 
 
-    public void imageListView() {
-
-        imageAdapter = new ProfileListCustomAdapter(UserProfileActivity.this, listOfEventObjects);
-        profile_list_view.setAdapter(imageAdapter);
-
-        profile_list_view.setClickable(true);
-        profile_list_view.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-
-            @Override
-            public void onItemClick(AdapterView<?> arg0, View arg1, int position, long arg3) {
-
-                Intent intent = new Intent(UserProfileActivity.this, EventPhotoStreamGridView.class);
-                startActivity(intent);
-                Object listViewObject = profile_list_view.getItemAtPosition(position);
-            }
-        });
-    }
-
-    public void GetJoinedEvents(){
-
-        ParseQuery<ParseObject> query = ParseQuery.getQuery("JoinedEvent");
-        String id = ParseUser.getCurrentUser().getObjectId();
-
-        //query.whereEqualTo("UserId", id);
-        //Toast.makeText(getApplicationContext(), "inside joinedevents ", Toast.LENGTH_SHORT).show();
-
-        query.findInBackground(new FindCallback<ParseObject>() {
-            public void done(List<ParseObject> results, ParseException e) {
-                Toast.makeText(getApplicationContext(), "inside done, results size:" +results.size(), Toast.LENGTH_SHORT).show();
-
-                if (e == null) {
-                    //Toast.makeText(getApplicationContext(), "inside if==null ", Toast.LENGTH_SHORT).show();
-
-                    int numberOfResults = results.size();
-
-                    if (numberOfResults > 0) {
-
-                        for(int i = 0; i < results.size(); i++){
-                            joinedEventList.add((JoinedEvent)results.get(i));
-                        }
-
-                    }
-                } else {
-                    Log.w("score", "Error: " + e.getMessage());
-                }
-            }
-        });
-
-    }//end of SimpleEventImageDisplay method
+//    public void imageListView() {
+//
+//        imageAdapter = new ProfileListCustomAdapter(UserProfileActivity.this, listOfEventObjects);
+//        profile_list_view.setAdapter(imageAdapter);
+//
+//        profile_list_view.setClickable(true);
+//        profile_list_view.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//
+//            @Override
+//            public void onItemClick(AdapterView<?> arg0, View arg1, int position, long arg3) {
+//
+//                Intent intent = new Intent(UserProfileActivity.this, EventPhotoStreamGridView.class);
+//                startActivity(intent);
+//                Object listViewObject = profile_list_view.getItemAtPosition(position);
+//            }
+//        });
+//    }
+//
+//    public void GetJoinedEvents(){
+//
+//        ParseQuery<ParseObject> query = ParseQuery.getQuery("JoinedEvent");
+//        String id = ParseUser.getCurrentUser().getObjectId();
+//
+//        //query.whereEqualTo("UserId", id);
+//        //Toast.makeText(getApplicationContext(), "inside joinedevents ", Toast.LENGTH_SHORT).show();
+//
+//        query.findInBackground(new FindCallback<ParseObject>() {
+//            public void done(List<ParseObject> results, ParseException e) {
+//                Toast.makeText(getApplicationContext(), "inside done, results size:" + results.size(), Toast.LENGTH_SHORT).show();
+//
+//                if (e == null) {
+//                    //Toast.makeText(getApplicationContext(), "inside if==null ", Toast.LENGTH_SHORT).show();
+//
+//                    int numberOfResults = results.size();
+//
+//                    if (numberOfResults > 0) {
+//
+//                        for (int i = 0; i < results.size(); i++) {
+//                            joinedEventList.add((JoinedEvent) results.get(i));
+//                        }
+//
+//                    }
+//                } else {
+//                    Log.w("score", "Error: " + e.getMessage());
+//                }
+//            }
+//        });
+//
+//    }//end of SimpleEventImageDisplay method
 
 
 
 
     //Get the Event Images from parse and put them in the listOfPictures array to send to ProfileListCustomAdapter
-    public void EventImageDisplayListView(){
-
-
-
-        for(int i = 0; i < joinedEventList.size(); i++){
-            final int eventID = joinedEventList.get(i).getEventId();
-            final String eventDescription = joinedEventList.get(i).getEventDescription();
-            final String eventName = joinedEventList.get(i).getEventName();
-
-            ParseQuery<ParseObject> query = ParseQuery.getQuery("PhotoParse");
-            query.whereEqualTo("eventId", eventID);
-            query.getFirstInBackground(new GetCallback<ParseObject>() {
-                public void done(ParseObject result, ParseException e) {
-                    Event event = new Event();
-                    event.setDescription(eventDescription);
-                    event.setName(eventName);
-                    event.setEventId(eventID);
-                    if (e == null) {
-                        PhotoParse photo = (PhotoParse) result;
-                        event.setEventAvatar(photo.getImage());
-                    } else {
-                        Log.d("score", "Error: " + e.getMessage());
-                    }
-                    listOfEventObjects.add(event);
-                }
-            });
-        }
-
-
-
-
-    }//end of SimpleEventImageDisplay method
+//    public void EventImageDisplayListView(){
+//
+//
+//
+//        for(int i = 0; i < joinedEventList.size(); i++){
+//            final int eventID = joinedEventList.get(i).getEventId();
+//            final String eventDescription = joinedEventList.get(i).getEventDescription();
+//            final String eventName = joinedEventList.get(i).getEventName();
+//
+//            ParseQuery<ParseObject> query = ParseQuery.getQuery("PhotoParse");
+//            query.whereEqualTo("eventId", eventID);
+//            query.getFirstInBackground(new GetCallback<ParseObject>() {
+//                public void done(ParseObject result, ParseException e) {
+//                    Event event = new Event();
+//                    event.setDescription(eventDescription);
+//                    event.setName(eventName);
+//                    event.setEventId(eventID);
+//                    if (e == null) {
+//                        PhotoParse photo = (PhotoParse) result;
+//                        event.setEventAvatar(photo.getImage());
+//                    } else {
+//                        Log.d("score", "Error: " + e.getMessage());
+//                    }
+//                    listOfEventObjects.add(event);
+//                }
+//            });
+//        }
+//
+//
+//
+//
+//    }//end of SimpleEventImageDisplay method
 
 
 
@@ -287,13 +299,7 @@ public class UserProfileActivity extends AppCompatActivity {//did extend ListAct
         }
     }
 
-    //    private void updateList() {
-//        customAdapter.loadObjects();
-//        setListAdapter(customAdapter);
-//
-//    }
-//
-//    @Override
+    @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == 1 && resultCode == RESULT_OK && data != null && data.getData() != null) {
             uri = data.getData();
@@ -306,13 +312,13 @@ public class UserProfileActivity extends AppCompatActivity {//did extend ListAct
             }
             ProfileImageDisplay();
         }
-//        if (resultCode == Activity.RESULT_OK) {
-//            // If a new post has been added, update
-//            // the list of posts
-//            updateList();
-//        }
-//    }
+        if (resultCode == Activity.RESULT_OK) {
+            // If a new post has been added, update
+            // the list of posts
+            //updateList();
+        }
     }
+
 
     public int getEventId() {
         return eventId;

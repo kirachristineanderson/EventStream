@@ -10,6 +10,7 @@ import java.util.Date;
 /**
  * Created by afterafx on 3/22/16.
  */
+
 @ParseClassName("ProfileEvent")
 public class ProfileEvent extends ParseObject {
 

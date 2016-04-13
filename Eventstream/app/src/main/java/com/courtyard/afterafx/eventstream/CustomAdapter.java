@@ -7,49 +7,34 @@ import android.widget.TextView;
 
 import com.parse.ParseQuery;
 import com.parse.ParseQueryAdapter;
-import com.parse.ParseUser;
 
-public class CustomAdapter extends ParseQueryAdapter<JoinedEvent> {
+public class CustomAdapter extends ParseQueryAdapter<ProfileEvent> {
 
 
     public CustomAdapter(Context context) {
-        super(context, new ParseQueryAdapter.QueryFactory<JoinedEvent>() {
-            public ParseQuery<JoinedEvent> create() {
-                ParseQuery query = new ParseQuery("JoinedEvent");
-                query.whereEqualTo("eventCreator", ParseUser.getCurrentUser());
+        super(context, new ParseQueryAdapter.QueryFactory<ProfileEvent>() {
+            public ParseQuery<ProfileEvent> create() {
+                ParseQuery query = new ParseQuery("ProfileEvent");
                 return query;
             }
         });
     }
 
     @Override
-    public View getItemView(JoinedEvent event, View v, ViewGroup parent) {
+        public View getItemView(ProfileEvent profileEvent, View v, ViewGroup parent) {
 
         if (v == null) {
-            v = View.inflate(getContext(), R.layout.activity_events, null);
+            v = View.inflate(getContext(), R.layout.user_profile, null);
         }
 
-        super.getItemView(event, v, parent);
+        super.getItemView(profileEvent, v, parent);
 
-//        ParseImageView eventImage = (ParseImageView) v.findViewById(R.id.icon);
-//        ParseFile photoFile = event.getParseFile("photo");
-//        if (photoFile != null) {
-//            eventImage.setParseFile(photoFile);
-//            eventImage.loadInBackground(new GetDataCallback() {
-//                @Override
-//                public void done(byte[] data, ParseException e) {
-//                    // nothing to do
-//                }
-//            });
-//        }
+        TextView titleTextView = (TextView) v.findViewById(R.id.name);
+        titleTextView.setText(profileEvent.getName());
 
-        TextView titleTextView = (TextView) v.findViewById(R.id.nameEvent);
-        titleTextView.setText(event.getEventName());
+        TextView ratingTextView = (TextView) v.findViewById(R.id.description);
+        ratingTextView.setText(profileEvent.getDescription());
 
-        TextView ratingTextView = (TextView) v.findViewById(R.id.descriptionEventUser);
-        ratingTextView.setText(event.getEventDescription());
         return v;
     }
 }
-
-

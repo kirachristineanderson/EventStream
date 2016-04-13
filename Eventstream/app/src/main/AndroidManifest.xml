@@ -70,9 +70,9 @@
 
         <activity
             android:name=".CreateEventMap"
-            android:label="@string/title_activity_create_event_map"></activity>
-        <activity android:name=".EventPhotoStreamGridView"></activity>
-        <activity android:name=".ImageViewActivity"></activity>
+            android:label="@string/title_activity_create_event_map" />
+        <activity android:name=".EventPhotoStreamGridView" />
+        <activity android:name=".ImageViewActivity" />
     </application>
 
 </manifest>
