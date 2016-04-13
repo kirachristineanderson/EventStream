@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Paint;
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.ContactsContract;
@@ -37,6 +38,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import bolts.Task;
+
 //public class UserProfileActivity extends AppCompatActivity {//did extend ListActivity
 public class UserProfileActivity extends ListActivity {
 
@@ -47,7 +50,7 @@ public class UserProfileActivity extends ListActivity {
     //new variables for new list view
     private ImageView profilePicture;
     private Bitmap bitmap;
-
+    RoundImage roundedImage;
 //    //put images in parse
     private String imageObjectId;
     private Uri uri;
@@ -74,6 +77,18 @@ public class UserProfileActivity extends ListActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.user_profile);
+        Typeface myTipeFace = Typeface.createFromAsset(getAssets(), "pacifico.ttf");
+        TextView myTextView = (TextView)findViewById(R.id.username);
+        myTextView.setTypeface(myTipeFace);
+
+        Typeface myTipeFace2 = Typeface.createFromAsset(getAssets(), "open.ttf");
+        TextView myTextView2 = (TextView)findViewById(R.id.myEvents);
+        myTextView2.setTypeface(myTipeFace2);
+        TextView myTextView3 = (TextView)findViewById(R.id.name);
+        myTextView3.setTypeface(myTipeFace2);
+        TextView myTextView4 = (TextView)findViewById(R.id.description);
+        myTextView4.setTypeface(myTipeFace2);
+
 
         profileAdapter = new ParseQueryAdapter<>(this, JoinedEvent.class);
         profileAdapter.setTextKey("eventName");
@@ -82,6 +97,34 @@ public class UserProfileActivity extends ListActivity {
         customAdapter = new CustomAdapter(this);
 
         setListAdapter(customAdapter);
+
+
+
+        getListView().setClickable(true);
+        getListView().setOnItemClickListener(
+                new AdapterView.OnItemClickListener() {
+                    public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+                        // your code is here on item click
+                        Object object = getListView().getItemAtPosition(position);
+                        //Event event = (Event) object;
+                        ProfileEvent profileEvent = (ProfileEvent) object;
+                        String eventName = profileEvent.getName();
+                        String eventDescription = profileEvent.getDescription();
+                        int eventId = profileEvent.getEventId();
+                        boolean isPrivate = profileEvent.isPrivate();
+
+                        Intent intent = new Intent(UserProfileActivity.this, EventAlbum.class);
+                        intent.putExtra("Name", eventName);
+                        intent.putExtra("Description", eventDescription);
+                        intent.putExtra("EventID", eventId);
+                        intent.putExtra("Private", isPrivate);
+
+                        startActivity(intent);
+
+                        new Thread(new Task()).start();
+                    }
+                });
+
 
 
         profilePicture = (ImageView) findViewById(R.id.profilePicture);
@@ -114,6 +157,16 @@ public class UserProfileActivity extends ListActivity {
         ProfileImageDisplay(); //assigns picture to profilePicture image view
     }
 
+    class Task implements Runnable {
+        @Override
+        public void run() {
+            try {
+                Thread.sleep(2000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 
 //    public void imageListView() {
 //
@@ -220,11 +273,12 @@ public class UserProfileActivity extends ListActivity {
 
                         public void done(byte[] data, ParseException e) {
                             if (e == null) {
-
                                 bitmap = BitmapFactory.decodeByteArray(data, 0, data.length);
+                                roundedImage = new RoundImage(bitmap);
+                                profilePicture.setImageDrawable(roundedImage);
                                 //use this bitmap as you want
                                 //Picasso.with(Profile.this).load(imageUri.toString()).into(profileImage);
-                                profilePicture.setImageBitmap(bitmap);
+                                //profilePicture.setImageBitmap(bitmap);
                                 //single_image.setImageBitmap(bitmap);
 
                             } else {

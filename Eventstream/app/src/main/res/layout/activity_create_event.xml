@@ -149,7 +149,7 @@
         android:layout_height="wrap_content"
         android:text="Submit"
         android:id="@+id/eventSubmit"
-        android:textColor="#FFFFFF"
+        android:textColor="#000000"
         android:textAllCaps="false"
         android:background="@drawable/button2"
         android:layout_below="@+id/privateBox"

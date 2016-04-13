@@ -25,7 +25,7 @@ public class LevelAdapter extends ParseQueryAdapter<Event> {
     public View getItemView(Event event, View v, ViewGroup parent) {
 
         if (v == null) {
-            v = View.inflate(getContext(), R.layout.activity_events, null);
+            v = View.inflate(getContext(), R.layout.events_list_custom_row, null);
         }
 
         super.getItemView(event, v, parent);
@@ -42,10 +42,10 @@ public class LevelAdapter extends ParseQueryAdapter<Event> {
 //            });
 //        }
 
-        TextView titleTextView = (TextView) v.findViewById(R.id.nameEvent);
+        TextView titleTextView = (TextView) v.findViewById(R.id.event_name);
         titleTextView.setText(event.getName());
 
-        TextView ratingTextView = (TextView) v.findViewById(R.id.descriptionEvent);
+        TextView ratingTextView = (TextView) v.findViewById(R.id.event_description);
         ratingTextView.setText(event.getDescription());
         return v;
     }

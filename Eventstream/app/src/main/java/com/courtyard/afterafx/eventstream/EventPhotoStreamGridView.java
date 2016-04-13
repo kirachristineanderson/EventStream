@@ -45,11 +45,11 @@ public class EventPhotoStreamGridView extends AppCompatActivity {
         setContentView(R.layout.activity_event_photo_stream_grid_view);
 
         photo_stream_grid_view = (GridView) findViewById(R.id.photo_stream_grid_view);
-        mSwipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.activity_main_swipe_refresh_layout);
+        //mSwipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.activity_main_swipe_refresh_layout);
 
         imageGridView();
-        populateGridView();
 
+        populateGridView();
 
 
     }

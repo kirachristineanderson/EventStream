@@ -21,11 +21,12 @@
             android:text="Search"
             android:id="@+id/searchButton"
             android:onClick="onSearch"
-            android:textColor="#FFFFFF"
+            android:textColor="#000000"
             android:background="@drawable/button2"
             android:layout_margin="0dp"
             android:padding="10dp"
-            android:textAllCaps="false"/>
+            android:textAllCaps="false"
+            android:textSize="10dp"/>
 
 
         <EditText
@@ -43,9 +44,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Accept"
+            android:textSize="10dp"
             android:id="@+id/acceptButton"
             android:onClick="acceptButton"
-            android:textColor="#FFFFFF"
+            android:textColor="#000000"
             android:background="@drawable/button2"
             android:layout_margin="0dp"
             android:padding="10dp"

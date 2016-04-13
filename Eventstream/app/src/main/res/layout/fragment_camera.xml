@@ -18,26 +18,32 @@
 
     <Button
         android:id="@+id/cancel_button"
-        android:layout_width="100dp"
+        android:layout_width="50dp"
         android:layout_height="50dp"
-        android:text="Cancel"
+        android:textColor="#FFFFFF"
+        android:textAllCaps="false"
         android:layout_gravity="bottom|top"
         android:layout_marginLeft="57dp"
         android:layout_marginStart="57dp"
+        android:layout_marginBottom="6dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="false" />
+        android:layout_alignParentStart="false"
+        android:background="@drawable/xicon"/>
 
     <Button
         android:id="@+id/save_button"
-        android:layout_width="100dp"
+        android:layout_width="50dp"
         android:layout_height="50dp"
-        android:text="Save"
+        android:textColor="#FFFFFF"
+        android:textAllCaps="false"
         android:layout_gravity="top"
         android:layout_marginRight="62dp"
         android:layout_marginEnd="62dp"
+        android:layout_marginBottom="6dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:background="@drawable/checkicon"/>
 
 </RelativeLayout>

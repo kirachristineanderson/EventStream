@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -53,6 +54,14 @@ public class EventAlbum extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event_album);
+
+        Typeface myTipeFace = Typeface.createFromAsset(getAssets(), "open.ttf");
+        TextView myTextView = (TextView)findViewById(R.id.joinEventName);
+        myTextView.setTypeface(myTipeFace);
+        Typeface myTipeFace2 = Typeface.createFromAsset(getAssets(), "openlight.ttf");
+        TextView myTextView2 = (TextView)findViewById(R.id.joinEventDescription);
+        myTextView2.setTypeface(myTipeFace2);
+
         mSwipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.activity_main_swipe_refresh_layout);
         final Intent intent = getIntent();
         final String eventName = intent.getStringExtra("Name");
@@ -72,11 +81,13 @@ public class EventAlbum extends Activity {
 
         populateGridView();
 
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            Thread.sleep(1000);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
+
+        //Thread.yield();
 
         imageGridView();
 
@@ -90,11 +101,11 @@ public class EventAlbum extends Activity {
                         listOfPhotoParseObjects=new ArrayList<>();
                         populateGridView();
 
-                        try {
-                            Thread.sleep(1000);
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        }
+//                        try {
+//                            Thread.sleep(1000);
+//                        } catch (InterruptedException e) {
+//                            e.printStackTrace();
+//                        }
 
                         imageGridView();
                         mSwipeRefreshLayout.setRefreshing(false);
@@ -102,18 +113,20 @@ public class EventAlbum extends Activity {
                 }, 2500);
             }
         });
-    
+
 
 
 
     sharedPreferences = getSharedPreferences(MyPREFERENCES, 1);
 
-        Button joinButton = (Button) findViewById(R.id.joinEventButton);
+        final Button joinButton = (Button) findViewById(R.id.joinEventButton);
         //final JoinedEvent joinedEvent = new JoinedEvent();
         final ProfileEvent profileEvent = new ProfileEvent();
         joinButton.setOnClickListener(
                 new View.OnClickListener() {
                     public void onClick(View v) {
+                        joinButton.setText("Joind!");
+                        joinButton.setBackgroundResource(R.drawable.button7);
 
                         if(!isPrivate){
                             //joinedEvent = new JoinedEvent();
